@@ -9,9 +9,16 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* ACTUAL CSS */
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800");
 
 @main-font: "Open Sans", sans-serif;
+
+.transition(@duration:0.2s, @properties:all) {
+	-webkit-transition: @properties @duration;
+	-moz-transition: @properties @duration;
+	-o-transition: @properties @duration;
+	transition: @properties @duration;
+}
 
 body {
 	font-size: 14px;
@@ -27,14 +34,28 @@ header {
 	opacity: 0.9;
 	background-color: #fff;
 	nav {
-		max-width: 720px;
-		margin: auto;
-		font-size: 150%;
+		width: 720px;
+		margin: 0 auto;
+		font-size: 120%;
 		font-weight: 300;
+		height: 100%;
+		text-align: center;
 		a {
 			text-decoration: none;
 			color: #000;
-			
+			display: inline-block;
+			box-sizing: border-box;
+			height: 100%;
+			padding: 15px 20px;
+			text-align: center;
+			.transition(0.3s);
+			&:hover {
+				background-color: #ccc;
+			}
+			&:before {
+				font-family: "FontAwesome";
+				padding-right: 15px;
+			}
 		}
 	}
 }
@@ -72,7 +93,7 @@ header {
 		font-weight: 800;
 	}
 	.eventDetails {
-		padding: 0 40px 40px 40px;
+		padding: 0 40px;
 		div {
 			font-size: 200%;
 			padding: 10px 20px;
@@ -83,14 +104,14 @@ header {
 		}
 	}
 	.eventInfo {
-		padding: 0 40px 40px 40px;
+		padding: 30px 40px 50px 40px;
 		font-size: 150%;
 		line-height: 1.5;
 		font-weight: 400;
 	}
 	.register {
 		display: inline-block;
-		padding: 20px 30px;
+		padding: 20px 25px;
 		color: #000;
 		background-color: #fff;
 		text-shadow: none;
@@ -98,8 +119,13 @@ header {
 		box-shadow: 0 0 5px #000;
 		font-size: 150%;
 		opacity: 0.85;
+		.transition(0.3s);
 		&:hover {
 			opacity: 1;
+		}
+		&:before {
+			font-family: "FontAwesome";
+			padding-right: 15px;
 		}
 	}
 }
