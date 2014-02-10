@@ -1,26 +1,16 @@
-html
-	head
-		title Goan Convention 2014
-		meta(name='viewport',content='width=device-width, minimum-scale=1.0, maximum-scale=1.0')
-		link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css")
-		link(rel='stylesheet', href='/stylesheets/style.css')
-		script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-		script(type='text/javascript', src='/javascripts/modernizr.min.js')
-		script(type='text/javascript', src='/javascripts/master.js')
-	body
-		header
-			nav
-				a.fa-question-circle(href="/") About
-				a.fa-calendar(href="/") Schedule
-				a.fa-building-o(href="/") About Pittsburgh
-				a.fa-envelope(href="/") Contact Us
-		section.main
-			.event
-				.eventTop The 12th biennial
-				.eventName Goan Convention
-				.eventDetails
-					.date July 3 - 5, 2014
-					.location Pittsburgh, PA
-				.eventInfo Bringing Goans from all over North America together to celebrate culture and heritage.
-				a.register.fa-check-circle(href="register") Register Now!
-		section.where
+extends main-layout
+
+block title
+	title Goan Convention 2014
+
+block content
+	section.main
+		.event
+			.eventTop The 12th biennial
+			.eventName Goan Convention
+			.eventDetails
+				.date July 3 - 5, 2014
+				.location Pittsburgh, PA
+			.eventInfo Bringing Goans from all over North America together to celebrate culture and heritage.
+			a.register.fa-check-circle(href="register") Register Now!
+	section.where
