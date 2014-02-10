@@ -50,7 +50,7 @@ header {
 			text-align: center;
 			.transition(0.3s);
 			&:hover {
-				background-color: #ccc;
+				background-color: #ddd;
 			}
 			&:before {
 				font-family: "FontAwesome";
@@ -85,7 +85,7 @@ header {
 		max-width: 720px;
 		margin: auto;
 		font-size: 300%;
-		padding: 40px;
+		padding: 60px 40px 40px 40px;
 	}
 	.eventName {
 		font-size: 500%;
@@ -105,9 +105,12 @@ header {
 	}
 	.eventInfo {
 		padding: 30px 40px 50px 40px;
-		font-size: 150%;
+		font-size: 170%;
 		line-height: 1.5;
 		font-weight: 400;
+		.newLine {
+			clear: both;
+		}
 	}
 	.register {
 		display: inline-block;
@@ -120,6 +123,7 @@ header {
 		font-size: 150%;
 		opacity: 0.85;
 		border-radius: 10px;
+		font-weight: 300;
 		.transition(0.3s);
 		&:hover {
 			opacity: 1;
@@ -135,3 +139,41 @@ header {
 .where {
 	height: 300px;
 }
+
+
+footer {
+	height: 50px;
+	background-color: #000;
+	.container {
+		max-width: 720px;
+		margin: auto;
+		height: 50px;
+		font-size: 90%;
+		font-weight: 300;
+	}
+	a {
+		color: #fff;
+		text-decoration: none;
+		display: inline-block;
+		box-sizing: border-box;
+		height: 50px;
+		padding: 18px 20px;
+		.transition(0.3s);
+		&:hover {
+			background-color: #444;
+		}
+		strong {
+			font-weight: 600;
+		}
+	}
+	.left {
+		float: left;
+	}
+	.right {
+		float: right;
+	}
+
+
+
+}
+
