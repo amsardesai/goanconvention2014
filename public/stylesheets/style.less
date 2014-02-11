@@ -190,9 +190,30 @@ footer {
 	height: 300px;
 	text-align: center;
 	background-image: url("../images/notebook.png");
+	background-size: 300px 154px;
 	.head {
-
+		font-size: 200%;
+		padding: 24px 0;
+		font-weight: 300;
+		&:before, &:after {
+			content: "";
+			width: 200px;
+			height: 5px;
+			display: inline-block;
+			margin: 6px 30px;
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+		}
 	}
 }
 
+@media only screen and (min--moz-device-pixel-ratio: 2),
+	only screen and (-o-min-device-pixel-ratio: 2/1),
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
 
+	.where {
+		background-image: url("../images/notebook_@2X.png");
+	}
+
+}
