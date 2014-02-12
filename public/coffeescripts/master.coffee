@@ -7,9 +7,14 @@ parallaxSkylineMaskFactor = 1 / 700;
 delay = 200
 
 $ ->
+
+	$("header").hide().delay(delay*2).fadeIn(delay*3)
+
+	# Parallax
+
 	main = $(".main")
 	mainMask = $(".main .mask")
-
+	
 	if not Modernizr.touch then $(window).bind "scroll", ->
 		scrollTop = $(window).scrollTop()
 		main.css("background-position-y", Math.max(scrollTop * parallaxSkylineFactor, 0))

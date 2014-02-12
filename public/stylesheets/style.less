@@ -24,6 +24,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 body {
 	font-size: 14px;
 	font-family: @main-font;
+	position: relative;
 }
 
 header {
@@ -35,20 +36,19 @@ header {
 	height: 50px;
 	background-color: #fff;
 	box-shadow: 0 0 5px #000;
+	opacity: 0.9;
 	nav {
 		width: 720px;
 		margin: 0 auto;
 		font-size: 120%;
 		font-weight: 300;
-		height: 100%;
 		text-align: center;
 		a {
 			text-decoration: none;
 			color: #000;
 			display: inline-block;
-			box-sizing: border-box;
-			height: 100%;
-			padding: 15px 20px;
+			line-height: 50px;
+			padding: 0 20px;
 			text-align: center;
 			.transition(0.3s, background-color);
 			&:hover {
@@ -66,7 +66,10 @@ header {
 
 footer {
 	height: 50px;
-	background-color: #000;
+	background-color: #333;
+	box-shadow: 0 0 5px #000;
+	position: relative;
+	z-index: 1;
 	.container {
 		max-width: 720px;
 		margin: auto;
@@ -78,12 +81,11 @@ footer {
 		color: #fff;
 		text-decoration: none;
 		display: inline-block;
-		box-sizing: border-box;
-		height: 50px;
-		padding: 18px 20px;
-		.transition(0.3s, opacity);
+		line-height: 50px;
+		padding: 0 20px;
+		.transition(0.3s, background-color);
 		&:hover {
-			background-color: #444;
+			background-color: #666;
 		}
 		strong {
 			font-weight: 600;
@@ -189,21 +191,23 @@ footer {
 
 
 .where {
-	height: 231px;
+	height: 257px;
 	text-align: center;
 	background-image: url("../images/notebook.png");
 	background-size: 300px 154px;
 	box-shadow: 0 0 5px #000;
+	position: relative;
+	z-index: 1;
 	.head {
-		font-size: 200%;
-		padding: 26px 0 23px 0;
+		font-size: 170%;
+		padding: 26px 0;
 		font-weight: 300;
 		&:before, &:after {
 			content: "";
 			width: 200px;
 			height: 5px;
 			display: inline-block;
-			margin: 6px 30px;
+			margin: 5px 15px;
 			border-top: 1px solid #000;
 			border-bottom: 1px solid #000;
 		}
@@ -215,24 +219,35 @@ footer {
 		font-weight: 300;
 		font-size: 130%;
 		line-height: 26px;
-		padding-top: 2px;
+		padding-top: 13px;
 		padding-bottom: 19px;
 		width: 480px;
 		margin: auto;
 		.hotel {
-			font-size: 160%;
+			font-size: 200%;
 			font-weight: 400;
-			padding-bottom: 3px;
+			padding-bottom: 18px;
 		}
 		&:hover {
-			color: #666;
-			border-bottom: 1px solid #ccc;
+			//color: #666;
 		}
 	}
 }
 
 .what {
-	height: 500px;
+	background-image: url("../images/triangular.png");
+	background-size: 60px 60px;
+	position: relative;
+	z-index: 0;
+	text-align: center;
+	.notice {
+		line-height: 30px;
+		padding: 30px;
+		max-width: 720px;
+		margin: auto;
+		font-size: 170%;
+		font-weight: 300;
+	}
 }
 
 @media only screen and (min--moz-device-pixel-ratio: 2),
@@ -244,4 +259,7 @@ footer {
 		background-image: url("../images/notebook_@2X.png");
 	}
 
+	.mapofgoans {
+		background-image: url("../images/triangular_@2X.png");
+	}
 }
