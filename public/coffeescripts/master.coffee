@@ -13,9 +13,12 @@ $ ->
 	# Parallax
 
 	main = $(".main")
-	mainMask = $(".main .mask")
+	mainMask = $(".main .mask").css("background-color": "black", opacity: 0)
 	
-	if not Modernizr.touch then $(window).bind "scroll", ->
+	parallax = ->
 		scrollTop = $(window).scrollTop()
-		main.css("background-position-y", Math.max(scrollTop * parallaxSkylineFactor, 0))
-		mainMask.css("opacity", range(0, 1, scrollTop * parallaxSkylineMaskFactor))
+		main.css("background-position-y": Math.max(scrollTop * parallaxSkylineFactor, 0))
+		mainMask.css(opacity: range(0, 1, scrollTop * parallaxSkylineMaskFactor))
+	parallax()
+
+	if not Modernizr.touch then $(window).bind "scroll", parallax

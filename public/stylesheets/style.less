@@ -21,10 +21,15 @@ table { border-collapse: collapse; border-spacing: 0; }
 	transition: @properties @duration;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	font-size: 14px;
 	font-family: @main-font;
 	position: relative;
+	height: 100%;
 }
 
 header {
@@ -184,14 +189,12 @@ footer {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: #000;
-		opacity: 0;
 	}
 }
 
 
 .where {
-	height: 257px;
+	height: 231px;
 	text-align: center;
 	background-image: url("../images/notebook.png");
 	background-size: 300px 154px;
@@ -226,7 +229,7 @@ footer {
 		.hotel {
 			font-size: 200%;
 			font-weight: 400;
-			padding-bottom: 18px;
+			padding-bottom: 13px;
 		}
 		&:hover {
 			//color: #666;

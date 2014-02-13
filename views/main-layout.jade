@@ -1,12 +1,14 @@
 html
 	head
-		block title
 		meta(name='viewport',content='width=device-width, minimum-scale=1.0, maximum-scale=1.0')
 		link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css")
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
 		script(type='text/javascript', src='/javascripts/modernizr.min.js')
 		script(type='text/javascript', src='/javascripts/master.js')
+		block head
+			-var title = "";
+		title=title
 	body
 		header
 			nav
