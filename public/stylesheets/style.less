@@ -41,7 +41,7 @@ header {
 	height: 50px;
 	background-color: #fff;
 	box-shadow: 0 0 5px #000;
-	opacity: 0.9;
+	opacity: 0.95;
 	nav {
 		width: 720px;
 		margin: 0 auto;
@@ -180,9 +180,9 @@ footer {
 		opacity: 0.85;
 		border-radius: 10px;
 		font-weight: 300;
-		.transition(0.3s);
+		//.transition(0.3s);
 		&:hover {
-			opacity: 1;
+			//opacity: 1;
 		}
 		&:before {
 			font-family: "FontAwesome";
@@ -243,24 +243,61 @@ footer {
 	}
 }
 
-.what {
+.misc {
 	background-image: url("../images/triangular.png");
 	background-attachment: fixed;
+	background-position: top center;
 	background-size: 60px 60px;
 	position: relative;
 	z-index: 0;
 	text-align: center;
-	height: 500px;
-	padding-top: 30px;
-	font-size: 170%;
+	padding: 15px 0;
+	font-size: 120%;
 	.notice {
+		display: inline-block;
 		line-height: 30px;
-		max-width: 720px;
-		margin: 0 auto 30px auto;
-		font-weight: 300;
+		font-weight: 400;
+		text-align: left;
+		width: 310px;
+		height: 70px;
+		margin: 15px;
+		padding: 10px;
+		border-radius: 10px;
+		text-decoration: none;
+		color: #000;
+		background-color: #fff;
+		background-image: none;
+		overflow: hidden;
+		box-shadow: 0 0 5px #000;
+		i {
+			padding: 0 10px;
+		}
+		&.mapofgoans {
+			@mapofgoans-color-1: #70D3F8;
+			@mapofgoans-color-2: #FB8C29;
+			@mapofgoans-color-3: #C35C00;
+			background-color: lighten(@mapofgoans-color-2, 35%);
+			border: 5px solid lighten(@mapofgoans-color-3, 35%);
+			padding: 5px;
+			line-height: 70px;
+			text-align: center;
+			//color: #fff;
+			i {
+				padding-left: 0;
+			}
+			&:hover {
+				background-color: lighten(@mapofgoans-color-2, 0%);
+				border-color: lighten(@mapofgoans-color-3, 0%);
+				color: #fff;
+				box-shadow: 0 0 10px #fff;
+			}
+		}
 	}
-	.smaller {
-		font-size: 80%;
+	.facebook {
+		margin-top: 5px;
+		padding-top: 10px;
+		border-top: 2px solid #aaa;
+		height: 20px;
 	}
 }
 
