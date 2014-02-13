@@ -131,18 +131,22 @@ footer {
 		z-index: 1;
 	}
 	.eventTop {
-		max-width: 720px;
+		max-width: 600px;
 		margin: auto;
 		font-size: 300%;
 		padding: 60px 40px 40px 40px;
 	}
 	.eventName {
+		max-width: 600px;
+		margin: auto;
 		font-size: 500%;
 		padding: 0 40px 40px 40px;
 		font-weight: 800;
 		font-family: @heading-font;
 	}
 	.eventDetails {
+		max-width: 600px;
+		margin: auto;
 		padding: 0 40px;
 		div {
 			font-size: 200%;
@@ -154,7 +158,9 @@ footer {
 		}
 	}
 	.eventInfo {
-		padding: 30px 40px 50px 40px;
+		max-width: 560px;
+		margin: auto;
+		padding: 30px 60px 50px 60px;
 		font-size: 170%;
 		line-height: 1.5;
 		font-weight: 400;
@@ -207,7 +213,7 @@ footer {
 		font-weight: 300;
 		&:before, &:after {
 			content: "";
-			width: 200px;
+			width: 100px;
 			height: 5px;
 			display: inline-block;
 			margin: 5px 15px;
@@ -239,17 +245,22 @@ footer {
 
 .what {
 	background-image: url("../images/triangular.png");
+	background-attachment: fixed;
 	background-size: 60px 60px;
 	position: relative;
 	z-index: 0;
 	text-align: center;
+	height: 500px;
+	padding-top: 30px;
+	font-size: 170%;
 	.notice {
 		line-height: 30px;
-		padding: 30px;
 		max-width: 720px;
-		margin: auto;
-		font-size: 170%;
+		margin: 0 auto 30px auto;
 		font-weight: 300;
+	}
+	.smaller {
+		font-size: 80%;
 	}
 }
 
