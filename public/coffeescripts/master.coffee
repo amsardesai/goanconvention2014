@@ -1,6 +1,5 @@
 range = (min, max, val) ->  Math.max(min, Math.min(max, val))
 
-
 delay = 200
 
 $ ->
@@ -9,7 +8,6 @@ $ ->
 
 	# Parallax for main
 
-	main = $(".main")
 	if not Modernizr.touch
 		mainMask = $(".main .mask").css("background-color": "black", opacity: 0)
 		(parallax = ->
