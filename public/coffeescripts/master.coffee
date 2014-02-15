@@ -2,7 +2,7 @@ range = (min, max, val) ->  Math.max(min, Math.min(max, val))
 
 delay = 200
 
-
+goaBeachColor = "#E9CEB3"
 
 $ ->
 
@@ -18,3 +18,6 @@ $ ->
 			mainMask.css(opacity: range(0, 1, $(window).scrollTop() / $(window).height()))
 		)()
 		$(window).bind "scroll", parallax
+
+	else
+		$(".goa-blurred").css("background-color": goaBeachColor, "background-image": "none")
