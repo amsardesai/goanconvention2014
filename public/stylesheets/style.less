@@ -31,6 +31,7 @@ body {
 	position: relative;
 	height: 100%;
 	background-color: #eee;
+	min-width: 320px;
 }
 
 header {
@@ -149,20 +150,23 @@ section.outer {
 			}
 		}
 	}
+	footer {
+		position: relative;
+	}
 }
 
 @media screen and (max-width: 560px) {
 	footer {
-		position: relative;
 		.container {
 			height: auto;
 			text-align: center;
 		}
 		.left, .right {
 			float: none;
-			font-size: 90%;
+			font-size: 85%;
 			display: block;
-			line-height: 40px;
+			line-height: 1;
+			padding: 10px 0;
 		}
 	}
 }
@@ -637,9 +641,8 @@ section.misc {
 	max-width: 1080px;
 	min-width: 70%;
 	margin: auto;
-	padding-top: 80px;
 	section.container {
-		padding-bottom: 80px;
+		padding: 80px 0;
 		text-align: center;
 		.head {
 			padding-top: 0;
@@ -647,8 +650,9 @@ section.misc {
 		em {
 			display: block;
 			font-weight: 300;
-			padding: 0 30px 30px 30px;
+			padding: 0 30px;
 			font-style: italic;
+			line-height: 1.5;
 			strong {
 				font-weight: 600;
 			}
@@ -656,12 +660,11 @@ section.misc {
 	}
 	.schedule-table {
 		width: 100%;
-		margin: 0 auto;
+		margin: 20px auto 0 auto;
 		border-collapse: separate;
 		border-spacing: 15px 5px;
 		border-left: 1px solid #ccc;
 		border-right: 1px solid #ccc;
-		min-width: 720px;
 		table-layout: fixed;
 		th {
 			font-weight: 600;
@@ -684,7 +687,6 @@ section.misc {
 			border: 2px solid;
 			vertical-align: middle;
 			font-weight: 400;
-			font-size: 95%;
 			border-radius: 5px;
 			line-height: 1.5;
 			box-shadow: 0 0 5px #000;
@@ -698,7 +700,47 @@ section.misc {
 				background-color: #FDD6FF;
 			}
 		}
+		&.mobile {
+			display: none;
+		}
 	}
+	@media screen and (max-width: 960px) {
+		.schedule-table {
+			border: 0;
+			td {
+				padding: 0;
+			}
+			.schedule-event {
+				font-size: 80%;
+			}
+		}
+	}
+
+
+	@media screen and (max-width: 720px) {
+		.schedule-table {
+			display: none;
+			&.mobile {
+				display: table;
+			}
+			.schedule-event {
+				font-size: 90%;
+			}
+		}
+	}
+
+	@media screen and (max-width: 680px) {
+		section.container {
+			padding: 20px 0;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.schedule-table {
+			font-size: 80%;
+		}
+	}
+
 }
 
 
