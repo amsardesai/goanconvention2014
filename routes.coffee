@@ -8,4 +8,6 @@ module.exports = (app) ->
 
 	app.get "/", (req, res) -> res.render "index"
 	app.get "/schedule", (req, res) -> res.render "schedule"
+	app.get "/sponsors", (req, res) -> res.render "sponsors"
+	app.get "/pastconventions", (req, res) -> res.render "pastconventions"
 	app.get "*", (req, res) -> res.send "404", 404

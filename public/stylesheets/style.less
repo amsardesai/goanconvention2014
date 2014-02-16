@@ -15,10 +15,14 @@ table { border-collapse: collapse; border-spacing: 0; }
 @heading-font: "Bad Script", cursive;
 
 .transition(@duration:0.2s, @properties:all) {
-	-webkit-transition: @properties @duration;
-	-moz-transition: @properties @duration;
-	-o-transition: @properties @duration;
-	transition: @properties @duration;
+	-webkit-transition-properties: @properties;
+	-webkit-transition-duration:  @duration;
+	-moz-transition-properties: @properties;
+	-moz-transition-duration:  @duration;
+	-o-transition-properties: @properties;
+	-o-transition-duration:  @duration;
+	transition-properties: @properties;
+	transition-duration:  @duration;
 }
 
 html {
@@ -171,12 +175,12 @@ section.outer {
 	}
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 500px) {
 	.head {
 		font-size: 140%;
 		padding-top: 29px;
 		&:before, &:after {
-			width: 50px;
+			width: 40px;
 			margin: 3px 10px;
 		}
 	}
@@ -632,8 +636,21 @@ section.misc {
 	}
 }
 
+// All other pages
 
+section.container {
+	padding: 80px 0;
+	text-align: center;
+	.head {
+		padding-top: 0;
+	}
+}
 
+@media screen and (max-width: 680px) {
+	section.container {
+		padding: 20px 0;
+	}
+}
 
 // Schedule Page
 
@@ -642,11 +659,6 @@ section.misc {
 	min-width: 70%;
 	margin: auto;
 	section.container {
-		padding: 80px 0;
-		text-align: center;
-		.head {
-			padding-top: 0;
-		}
 		em {
 			display: block;
 			font-weight: 300;
@@ -729,18 +741,83 @@ section.misc {
 		}
 	}
 
-	@media screen and (max-width: 680px) {
-		section.container {
-			padding: 20px 0;
-		}
-	}
-
 	@media screen and (max-width: 480px) {
 		.schedule-table {
 			font-size: 80%;
 		}
 	}
 
+}
+
+
+
+// Sponsor Page
+
+.sponsors {
+	background-image: url("../images/squared_metal.png");
+	background-size: 132px 132px;
+	section.container {
+		max-width: 720px;
+		margin: auto;
+	}
+	.info {
+		font-size: 120%;
+		font-weight: 300;
+		padding: 0 20px 20px 20px;
+		line-height: 2;
+		max-width: 380px;
+		margin: auto;
+	}
+	.sponsors-table {
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 15px 5px;
+		th.name, th.contribution {
+			padding: 10px;
+			border-bottom: 2px solid #999;
+			font-weight: 600;
+		}
+		td {
+			padding: 10px;
+			border-bottom: 1px solid #999;
+			line-height: 1.5;
+		}
+		.name {
+			text-align: left;
+		}
+		.contribution {
+			text-align: right;
+			font-weight: 300;
+		}
+	}
+
+}
+
+// Convention Page
+
+.pastconventions {
+	section.container {
+		max-width: 720px;
+		margin: auto;
+	}
+	.convention {
+		display: block;
+		width: 250px;
+		margin: 10px auto 30px auto;
+		padding: 15px 0;
+		border: 2px solid;
+		border-color: #aaa;
+		text-decoration: none;
+		color: #555;
+		border-radius: 5px;
+		font-size: 120%;
+		font-weight: 300;
+		.transition(0.2s, border-color background-color);
+		&:hover {
+			border-color: #555;
+			background-color: #ddd;
+		}
+	}
 }
 
 
@@ -766,5 +843,8 @@ section.misc {
 		background-image: url("../images/notebook_@2X.png");
 	}
 
+	.sponsors {
+		background-image: url("../images/squared_metal_@2X.png");
+	}
 
 }
