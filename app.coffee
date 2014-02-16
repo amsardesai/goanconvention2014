@@ -4,8 +4,6 @@ Module dependencies.
 ###
 express = require("express")
 routes = require("./routes")
-http = require("http")
-path = require("path")
 app = express()
 
 port = process.env.PORT or 3000
@@ -18,7 +16,8 @@ app.configure ->
 	app.set "view engine", "jade"
 	app.use express.favicon(__dirname + "/public/favicon.ico")
 	app.use express.logger("dev")
-	app.use express.bodyParser()
+	app.use express.json()
+	app.use express.urlencoded()
 	app.use express.methodOverride()
 	app.use require("less-middleware")(
 		src: __dirname + "/public"
@@ -37,5 +36,5 @@ app.configure "development", -> app.use express.errorHandler()
 routes app
 
 app.listen port, ->
-	console.log "Running at port " + port + " in " + env + " mode"
+	console.log "Goan Convention 2014 running at port " + port + " in " + env + " mode"
 

@@ -3,7 +3,7 @@
 module.exports = (app) ->
 	# Universal Headers
 	app.get "*", (req, res, next) -> 
-		res.header "X-UA-Compatible", "IE=edge"
+		res.header "X-UA-Compatible", "IE=edge,chrome=1"
 		next()
 
 	app.get "/", (req, res) -> res.render "index"
