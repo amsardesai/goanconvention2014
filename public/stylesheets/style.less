@@ -14,14 +14,14 @@ table { border-collapse: collapse; border-spacing: 0; }
 @main-font: "Open Sans", sans-serif;
 @heading-font: "Bad Script", cursive;
 
-.transition(@duration:0.2s, @properties:all) {
-	-webkit-transition-properties: @properties;
+.transition(@duration:0.2s, @property:all) {
+	-webkit-transition-property: @property;
 	-webkit-transition-duration:  @duration;
-	-moz-transition-properties: @properties;
+	-moz-transition-property: @property;
 	-moz-transition-duration:  @duration;
-	-o-transition-properties: @properties;
+	-o-transition-property: @property;
 	-o-transition-duration:  @duration;
-	transition-properties: @properties;
+	transition-property: @property;
 	transition-duration:  @duration;
 }
 
