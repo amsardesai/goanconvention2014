@@ -2,7 +2,7 @@ extends main-layout
 
 block head
 	-var title = "Goan Convention 2014";
-	-var page = "/";
+	-var bodyClass = "index"
 	script (function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//connect.facebook.net/en_US/all.js#xfbml=1";fjs.parentNode.insertBefore(js,fjs);}(document,'script','facebook-jssdk'));
 
 block content
@@ -35,7 +35,10 @@ block content
 			.description Goa is home to beautiful beaches, different cultures, and very tasty fish.
 	section.inner.goa
 		.beachname Palolem Beach, Goa
-	section.outer.misc
+	section.outer.more
+		i.animateIcon.fa.fa-exclamation-circle
+		| More content coming soon!
+	section.inner.misc
 		.misccontainer
 			a.notice
 				i.fa.fa-facebook-square.fa-lg

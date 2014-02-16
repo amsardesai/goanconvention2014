@@ -9,10 +9,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* ACTUAL CSS */
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800|Oleo+Script+Swash+Caps");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800|Bad+Script");
 
 @main-font: "Open Sans", sans-serif;
-@heading-font: "Oleo Script Swash Caps", cursive;
+@heading-font: "Bad Script", cursive;
 
 .transition(@duration:0.2s, @properties:all) {
 	-webkit-transition: @properties @duration;
@@ -30,6 +30,7 @@ body {
 	font-family: @main-font;
 	position: relative;
 	height: 100%;
+	background-color: #eee;
 }
 
 header {
@@ -74,7 +75,10 @@ footer {
 	height: 50px;
 	background-color: #333;
 	box-shadow: 0 0 5px #000;
-	position: relative;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	z-index: 1;
 	.container {
 		max-width: 720px;
@@ -135,7 +139,11 @@ section.outer {
 	z-index: 2;
 }
 
-// Main stuff
+// Main Page
+
+.index footer {
+	position: relative;
+}
 
 section.main {
 	height: 100%;
@@ -304,6 +312,14 @@ section.goa-blurred {
 		width: 600px;
 		height: 305px;
 	}
+	&.mobile {
+		background-image: none;
+		background-color: @box-color;
+		padding: 0;
+		box-shadow: none;
+		border: none;
+
+	}
 }
 
 section.goa {
@@ -331,9 +347,16 @@ section.goa {
 	}
 }
 
-section.links {
+section.more {
+	text-align: center;
 	background-image: url("../images/notebook.png");
 	background-size: 300px 154px;
+	font-size: 120%;
+	padding: 30px 0;
+	i.fa {
+		padding-right: 10px;
+	}
+
 }
 
 section.misc {
@@ -399,6 +422,79 @@ section.misc {
 		}
 	}
 }
+
+
+// Schedule Page
+
+.schedule {
+	max-width: 1080px;
+	min-width: 70%;
+	margin: auto;
+	padding-top: 70px;
+	.container {
+		padding-bottom: 70px;
+		text-align: center;
+		.head {
+			padding-top: 0;
+		}
+		em {
+			display: block;
+			font-weight: 300;
+			padding: 0 30px 30px 30px;
+			font-style: italic;
+			strong {
+				font-weight: 600;
+			}
+		}
+	}
+	.schedule-table {
+		width: 100%;
+		margin: 0 auto;
+		border-collapse: separate;
+		border-spacing: 15px 5px;
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		min-width: 720px;
+		table-layout: fixed;
+		th {
+			font-weight: 600;
+			padding-bottom: 10px;
+			border-bottom: 2px solid #ccc;
+		}
+		td {
+			padding: 5px 15px;
+			font-weight: 300;
+			text-align: center;
+			border-bottom: 1px solid #ccc;
+		}
+		.before-event {
+			border-bottom: 0;
+		}
+		.schedule-time {
+			padding: 5px 0;
+		}
+		.schedule-event {
+			border: 2px solid;
+			vertical-align: middle;
+			font-weight: 400;
+			font-size: 95%;
+			border-radius: 5px;
+			line-height: 1.5;
+			box-shadow: 0 0 5px #000;
+			border-color: #fff;
+			background-color: #E0E0E0;
+			&.youth {
+				background-color: #C9E1FF;
+
+			}
+			&.adult {
+				background-color: #FDD6FF;
+			}
+		}
+	}
+}
+
+
 
 @media only screen and (min--moz-device-pixel-ratio: 2),
 	only screen and (-o-min-device-pixel-ratio: 2/1),

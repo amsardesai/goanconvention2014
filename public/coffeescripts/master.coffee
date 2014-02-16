@@ -2,16 +2,17 @@ range = (min, max, val) ->  Math.max(min, Math.min(max, val))
 
 delay = 200
 
-goaBeachColor = "#E9CEB3"
 
 $ ->
 
-	$("header, .main .event").css(opacity: 0).delay(delay).animate (opacity: 1), delay * 4
-	$(".main .scrolldown").css(opacity: 0).delay(delay * 6).animate (opacity: 1), delay * 3
 
 	# Parallax for main
 
 	if not Modernizr.touch
+		$(".index .main .event").css(opacity: 0).delay(delay).animate (opacity: 1), delay * 2
+		$(".index header").css(opacity: 0).delay(delay*3).animate (opacity: 1), delay * 2
+		$(".index .main .scrolldown").css(opacity: 0).delay(delay * 5).animate (opacity: 1), delay * 2
+
 		mainMask = $(".main .mask").css("background-color": "black", opacity: 0)
 		(parallax = ->
 			scrollTip = 
@@ -20,4 +21,4 @@ $ ->
 		$(window).bind "scroll", parallax
 
 	else
-		$(".goa-blurred").css("background-color": goaBeachColor, "background-image": "none")
+		$(".goa-blurred").addClass("mobile");

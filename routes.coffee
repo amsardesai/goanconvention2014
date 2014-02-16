@@ -7,4 +7,5 @@ module.exports = (app) ->
 		next()
 
 	app.get "/", (req, res) -> res.render "index"
+	app.get "/schedule", (req, res) -> res.render "schedule"
 	app.get "*", (req, res) -> res.send "404", 404

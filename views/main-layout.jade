@@ -9,8 +9,9 @@ html
 		script(type='text/javascript', src='/javascripts/master.js')
 		block head
 			-var title = "";
+			-var bodyClass = "";
 		title=title
-	body
+	body(class=bodyClass)
 		header
 			nav
 				a.fa-question-circle(href="/") About
