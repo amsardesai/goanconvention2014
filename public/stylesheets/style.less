@@ -39,21 +39,20 @@ header {
 	left: 0;
 	right: 0;
 	z-index: 20;
-	height: 50px;
 	background-color: #fff;
 	box-shadow: 0 0 5px #000;
 	opacity: 0.95;
 	nav {
-		width: 720px;
+		max-width: 720px;
 		margin: 0 auto;
 		font-size: 120%;
 		font-weight: 300;
 		text-align: center;
+		height: 50px;
 		a {
 			text-decoration: none;
 			color: #000;
 			display: inline-block;
-			height: 50px;
 			line-height: 50px;
 			padding: 0 20px;
 			text-align: center;
@@ -72,7 +71,6 @@ header {
 
 
 footer {
-	height: 50px;
 	background-color: #333;
 	box-shadow: 0 0 5px #000;
 	position: fixed;
@@ -139,6 +137,48 @@ section.outer {
 	z-index: 2;
 }
 
+@media screen and (max-width: 680px) {
+	header {
+		position: relative;
+		nav {
+			height: auto;
+			a {
+				line-height: 40px;
+				display: block;
+				font-size: 90%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 560px) {
+	footer {
+		position: relative;
+		.container {
+			height: auto;
+			text-align: center;
+		}
+		.left, .right {
+			float: none;
+			font-size: 90%;
+			display: block;
+			line-height: 40px;
+		}
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.head {
+		font-size: 140%;
+		padding-top: 29px;
+		&:before, &:after {
+			width: 50px;
+			margin: 3px 10px;
+		}
+	}
+}
+
+
 // Main Page
 
 .index footer {
@@ -148,7 +188,7 @@ section.outer {
 section.main {
 	height: 100%;
 	width: 100%;
-	min-height: 600px;
+	min-height: 650px;
 	background-color: #000;
 	background-position: center 0;
 	background-repeat: no-repeat;
@@ -162,30 +202,22 @@ section.main {
 		display: table-cell;
 		vertical-align: middle;
 		font-weight: 600;
-		margin: 0 20%;
 		position: relative;
 		z-index: 1;
 	}
 	.eventTop {
-		max-width: 600px;
-		margin: auto;
 		font-size: 300%;
-		padding: 60px 40px 40px 40px;
+		padding: 60px 0 40px 0;
 	}
 	.eventName {
-		max-width: 600px;
-		margin: auto;
 		font-size: 500%;
-		padding: 0 40px 40px 40px;
+		padding: 0 0 40px 0;
 		font-weight: 800;
 		font-family: @heading-font;
 	}
 	.eventDetails {
-		max-width: 600px;
-		margin: auto;
-		padding: 0 40px;
+		font-size: 200%;
 		div {
-			font-size: 200%;
 			padding: 10px 20px;
 			display: inline-block;
 			&.date {
@@ -196,7 +228,7 @@ section.main {
 	.eventInfo {
 		max-width: 560px;
 		margin: auto;
-		padding: 30px 60px 30px 60px;
+		padding: 30px 0 40px 0;
 		font-size: 170%;
 		line-height: 1.5;
 		font-weight: 400;
@@ -245,6 +277,74 @@ section.main {
 		right: 0;
 		bottom: 0;
 	}
+	@media screen and (max-width: 680px) {
+		height: 550px;
+		min-height: 0;
+		background-size: 1150px 600px;
+		background-attachment: scroll;
+		.event {
+			margin: 0;
+			font-size: 80%;
+		}
+		.eventTop {
+			padding: 0 0 35px 0;
+		}
+		.eventName {
+			padding: 0 0 35px 0;
+		}
+
+		.eventDetails {
+			margin: 0;
+		}
+
+		.eventInfo {
+			max-width: 420px;
+			padding: 25px 0 35px 0;
+		}
+
+		.register {
+		}
+
+		.scrolldown {
+			display: none;
+		}
+	}
+	@media screen and (max-width: 450px) {
+		height: 400px;
+		.event {
+			font-size: 60%;
+		}
+		.eventTop {
+			padding: 0 0 30px 0;
+		}
+		.eventName {
+			padding: 0 0 20px 0;
+		}
+
+		.eventDetails {
+			div {
+				padding: 5px 15px;
+			}
+		}
+
+		.eventInfo {
+			max-width: 310px;
+			padding: 15px 10px 20px 10px;
+		}
+
+		.register {
+			padding: 15px 15px;
+			border-radius: 5px;
+			&:before {
+				padding-right: 7px;
+			}
+		}
+
+		.scrolldown {
+			display: none;
+		}
+
+	}
 }
 
 
@@ -262,7 +362,6 @@ section.where {
 		line-height: 26px;
 		padding-top: 13px;
 		padding-bottom: 19px;
-		width: 480px;
 		margin: auto;
 		.hotel {
 			font-size: 200%;
@@ -271,6 +370,14 @@ section.where {
 		}
 		&:hover {
 			//color: #666;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		a {
+			font-size: 110%;
+			.hotel {
+				font-size: 170%;
+			}			
 		}
 	}
 }
@@ -301,6 +408,8 @@ section.goa-blurred {
 		font-size: 150%;
 		line-height: 1.5;
 		font-weight: 300;
+		width: 540px;
+		margin: auto;
 		strong {
 			font-weight: 600;
 		}
@@ -309,24 +418,69 @@ section.goa-blurred {
 		background-image: url("../images/worldmap.png");
 		background-size: 600px 305px;
 		background-repeat: no-repeat;
+		background-position: top center;
 		width: 600px;
 		height: 305px;
+		margin: auto;
 	}
 	&.mobile {
 		background-image: none;
 		background-color: @box-color;
 		padding: 0;
-		box-shadow: none;
-		border: none;
-
+		.bigbox {
+			border: none;
+		}
+	}
+	@media screen and (max-width: 700px) {
+		padding: 30px 0;
+	}
+	@media screen and (max-width: 680px) {
+		background-image: none;
+		background-color: @box-color;
+		padding: 0;
+		.bigbox {
+			border: none;
+		}
+	}
+	@media screen and (max-width: 600px) {
+		.bigbox {
+			width: auto;
+		}
+		.description {
+			width: 390px;
+			font-size: 120%;
+			padding: 10px 20px;
+		}
+		.worldmap {
+			background-size: 450px 229px;
+			width: 450px;
+			height: 229px;
+		}
+	}
+	@media screen and (max-width: 450px) {
+		.description {
+			width: 340px;
+			padding: 10px;
+		}
+		.worldmap {
+			background-size: 300px 152px;
+			width: 300px;
+			height: 152px;
+		}
+	}
+	@media screen and (max-width: 360px) {
+		.description {
+			width: 290px;
+		}
 	}
 }
 
 section.goa {
 	height: 90%;
 	min-height: 400px;
+	max-height: 1352px;
 	background-color: #fff;
-	background-position: center bottom;
+	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-image: url("../images/goa.jpg");
 	.beachname {
@@ -344,6 +498,31 @@ section.goa {
 		font-size: 90%;
 		opacity: 0.8;
 		border-radius: 5px;
+	}
+	&.mobile {
+		background-attachment: scroll;
+	}
+	@media screen and (max-width: 650px) {
+		min-height: 0;
+		height: 400px;
+		background-attachment: scroll;
+		background-size: 1014px 676px;
+		.beachname {
+			margin-left: -250px;
+		}
+	}
+	@media screen and (max-width: 550px) {
+		.beachname {
+			margin-left: -200px;
+		}
+	}
+	@media screen and (max-width: 450px) {
+		height: 300px;
+		background-size: 676px 451px;
+		.beachname {
+			margin-left: -150px;
+			bottom: 10px;
+		}
 	}
 }
 
@@ -371,6 +550,7 @@ section.misc {
 		max-width: 720px;
 		margin: auto;
 		height: 120px;
+		text-align: center;
 	}
 	.notice {
 		display: inline-block;
@@ -421,7 +601,34 @@ section.misc {
 			overflow: hidden;
 		}
 	}
+	@media screen and (max-width: 740px) {
+		.misccontainer {
+			height: 240px;
+			max-width: 360px;
+		}
+	}
+	@media screen and (max-width: 360px) {
+		background-attachment: scroll;
+		.misccontainer {
+			height: 160px;
+		}
+		.notice {
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: 0;
+			float: none;
+			padding: 5px;
+			border-radius: 0;
+			&.mapofgoans {
+				padding: 0;
+				line-height: 50px;
+				height: 50px;
+			}
+		}
+	}
 }
+
+
 
 
 // Schedule Page
@@ -430,9 +637,9 @@ section.misc {
 	max-width: 1080px;
 	min-width: 70%;
 	margin: auto;
-	padding-top: 70px;
-	.container {
-		padding-bottom: 70px;
+	padding-top: 80px;
+	section.container {
+		padding-bottom: 80px;
 		text-align: center;
 		.head {
 			padding-top: 0;

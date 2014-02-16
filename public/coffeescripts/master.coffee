@@ -2,11 +2,7 @@ range = (min, max, val) ->  Math.max(min, Math.min(max, val))
 
 delay = 200
 
-
 $ ->
-
-
-	# Parallax for main
 
 	if not Modernizr.touch
 		$(".index .main .event").css(opacity: 0).delay(delay).animate (opacity: 1), delay * 2
@@ -21,4 +17,4 @@ $ ->
 		$(window).bind "scroll", parallax
 
 	else
-		$(".goa-blurred").addClass("mobile");
+		$(".goa-blurred, .goa").addClass("mobile");
