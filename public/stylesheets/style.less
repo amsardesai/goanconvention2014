@@ -16,18 +16,25 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .transition(@duration:0.2s, @property:all) {
 	-webkit-transition-property: @property;
-	-webkit-transition-duration:  @duration;
+	-webkit-transition-duration: @duration;
 	-moz-transition-property: @property;
-	-moz-transition-duration:  @duration;
+	-moz-transition-duration: @duration;
 	-o-transition-property: @property;
-	-o-transition-duration:  @duration;
+	-o-transition-duration: @duration;
 	transition-property: @property;
-	transition-duration:  @duration;
+	transition-duration: @duration;
 }
 
 html {
 	height: 100%;
 }
+
+::selection {
+	background: #000;
+} 
+::-moz-selection {
+	background: #000;
+} 
 
 body {
 	font-size: 14px;
@@ -36,6 +43,9 @@ body {
 	height: 100%;
 	background-color: #eee;
 	min-width: 320px;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
 }
 
 header {
@@ -684,7 +694,7 @@ section.container {
 			border-bottom: 2px solid #ccc;
 		}
 		td {
-			padding: 5px 15px;
+			padding: 2px 15px;
 			font-weight: 300;
 			text-align: center;
 			border-bottom: 1px solid #ccc;
@@ -711,16 +721,23 @@ section.container {
 			&.adult {
 				background-color: #FDD6FF;
 			}
+			.small {
+				font-size: 90%;
+				font-weight: 300;
+			}
 		}
 		&.mobile {
 			display: none;
+			.schedule-event {
+				padding: 5px 15px;
+			}
 		}
 	}
 	@media screen and (max-width: 960px) {
 		.schedule-table {
 			border: 0;
 			td {
-				padding: 0;
+				padding: 0 5px;
 			}
 			.schedule-event {
 				font-size: 80%;
