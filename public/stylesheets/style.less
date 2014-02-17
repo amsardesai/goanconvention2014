@@ -58,7 +58,7 @@ header {
 	box-shadow: 0 0 5px #000;
 	opacity: 0.95;
 	nav {
-		max-width: 720px;
+		max-width: 820px;
 		margin: 0 auto;
 		font-size: 120%;
 		font-weight: 300;
@@ -69,7 +69,8 @@ header {
 			color: #000;
 			display: inline-block;
 			line-height: 50px;
-			padding: 0 20px;
+			height: 50px;
+			padding: 0 15px;
 			text-align: center;
 			.transition(0.3s, background-color);
 			&:hover {
@@ -77,8 +78,21 @@ header {
 			}
 			&:before {
 				font-family: "FontAwesome";
-				padding-right: 15px;
+				padding-right: 10px;
 			}
+		}
+		.logo {
+			float: left;
+			width: 230px;
+			height: 50px;
+			background-image: url("../images/logo.png");
+			background-size: 205px 50px;
+			background-repeat: no-repeat;
+			background-position: center 2px;
+			padding: 0;
+		}
+		.links {
+			float: right;
 		}
 	}
 }
@@ -152,6 +166,17 @@ section.outer {
 	z-index: 2;
 }
 
+
+@media screen and (max-width: 720px) {
+	header {
+		nav {
+			.links {
+				font-size: 90%;
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 680px) {
 	header {
 		position: relative;
@@ -159,8 +184,18 @@ section.outer {
 			height: auto;
 			a {
 				line-height: 40px;
+				height: 40px;
 				display: block;
+			}
+			.links {
+				float: none;
 				font-size: 90%;
+			}
+			.logo {
+				float: none;
+				width: 100%;
+				margin: 0;
+				padding: 0;
 			}
 		}
 	}
@@ -858,6 +893,10 @@ section.container {
 	only screen and (-o-min-device-pixel-ratio: 2/1),
 	only screen and (-webkit-min-device-pixel-ratio: 2),
 	only screen and (min-device-pixel-ratio: 2) {
+
+	header nav .logo {
+		background-image: url("../images/logo_@2X.png");
+	}
 
 	section.where {
 		background-image: url("../images/notebook_@2X.png");

@@ -11,12 +11,13 @@ html
 	body(class=bodyClass)
 		header
 			nav
-				a.fa-question-circle(href="/") About
-				a.fa-calendar(href="/schedule") Schedule
-				a.fa-money(href="/sponsors") Sponsors
-				a.fa-flag(href="/pastconventions") Past Conventions
-				//-a.fa-building-o(href="/pittsburgh") About Pittsburgh
-				//-a.fa-envelope(href="/contact") Contact Us
+				a.logo(href="/")
+				.links
+					a.fa-calendar(href="/schedule") Schedule
+					a.fa-money(href="/sponsors") Sponsors
+					a.fa-flag(href="/pastconventions") Past Conventions
+					//-a.fa-building-o(href="/pittsburgh") About Pittsburgh
+					//-a.fa-envelope(href="/contact") Contact Us
 		block content
 		footer
 			.container
