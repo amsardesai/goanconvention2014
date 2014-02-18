@@ -942,3 +942,69 @@ section.container {
 	}
 
 }
+
+// Print devices
+
+@media print {
+	body {
+		background-color: #fff;
+	}
+
+
+	header,
+	section.main .scrolldown,
+	section.where,
+	section.goa-blurred,
+	section.goa,
+	section.more,
+	section.misc,
+	footer {
+		display: none;
+	}
+
+	.head {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	section.container {
+		padding: 10px 0 0 0;
+	}
+
+	.schedule {
+		em {
+			font-size: 70%;
+		}
+		.item {
+			font-size: 70%;
+			margin-top: 10px;
+			border-color: #fff;
+			box-shadow: none;
+		}
+		.schedule-table {
+			font-size: 70%;
+			margin-top: 10px;
+			border: 0;
+			border-spacing: 0 1px;
+			td, th {
+				border-color: #eee;
+			}
+			.schedule-time {
+				padding: 3px 0;
+			}
+			.schedule-event {
+				border-color: #fff;
+				box-shadow: none;
+			}
+		}
+	}
+
+	.sponsors {
+		background-image: none;
+		.info {
+			padding-bottom: 0;
+		}
+	}
+
+}
+
