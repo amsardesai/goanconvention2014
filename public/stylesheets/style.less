@@ -715,6 +715,19 @@ section.container {
 			}
 		}
 	}
+	.print {
+		display: block;
+		color: #000;
+		text-decoration: none;
+		margin: 20px auto 0 auto;
+		width: 200px;
+		i.fa {
+			margin-right: 10px;
+		}
+		&:hover {
+			color: #666;
+		}
+	}
 	.item {
 		border: 2px solid;
 		vertical-align: middle;
@@ -950,7 +963,6 @@ section.container {
 		background-color: #fff;
 	}
 
-
 	header,
 	section.main .scrolldown,
 	section.where,
@@ -975,10 +987,13 @@ section.container {
 		em {
 			font-size: 70%;
 		}
+		.print {
+			display: none;
+		}
 		.item {
 			font-size: 70%;
 			margin-top: 10px;
-			border-color: #fff;
+			border-color: #f9f9f9;
 			box-shadow: none;
 		}
 		.schedule-table {
@@ -987,13 +1002,13 @@ section.container {
 			border: 0;
 			border-spacing: 0 1px;
 			td, th {
-				border-color: #eee;
+				border-color: #ddd;
 			}
 			.schedule-time {
 				padding: 3px 0;
 			}
 			.schedule-event {
-				border-color: #fff;
+				border-color: #f9f9f9;
 				box-shadow: none;
 			}
 		}
@@ -1007,4 +1022,3 @@ section.container {
 	}
 
 }
-
