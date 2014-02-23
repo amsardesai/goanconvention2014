@@ -15,10 +15,14 @@ table { border-collapse: collapse; border-spacing: 0; }
 @heading-font: "Bad Script", cursive;
 
 .transition(@duration:0.2s, @property:all) {
-	-webkit-transition: @duration @property;
-	-moz-transition: @duration @property;
-	-o-transition: @duration @property;
-	transition: @duration @property;
+	-webkit-transition-duration: @duration;
+	-webkit-transition-property: @property;
+	-moz-transition-duration: @duration;
+	-moz-transition-property: @property;
+	-o-transition-duration: @duration;
+	-o-transition-property: @property;
+	transition-duration: @duration;
+	transition-property: @property;
 }
 
 html {
@@ -76,6 +80,18 @@ header {
 			&:before {
 				font-family: "FontAwesome";
 				padding-right: 10px;
+			}
+			&.register-menu {
+				line-height: 35px;
+				height: 35px;
+				padding: 0 10px;
+				margin: 0 5px;
+				border-radius: 5px;
+				border: 2px solid #ccc;
+				background-color: #eee;
+				&:hover {
+					background-color: #ddd;
+				}
 			}
 		}
 		.logo {
@@ -164,7 +180,7 @@ section.outer {
 }
 
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 800px) {
 	header {
 		nav {
 			a {
@@ -172,7 +188,7 @@ section.outer {
 				font-size: 80%;
 			}
 			.logo {
-				width: 205px;
+				width: 210px;
 			}
 		}
 	}
@@ -187,6 +203,15 @@ section.outer {
 				line-height: 35px;
 				height: 35px;
 				display: block;
+				&.register-menu {
+					line-height: 35px;
+					height: 35px;
+					padding: 0 15px;
+					margin: 0;
+					background-color: #fff;
+					border: 0;
+					border-radius: 0;
+				}
 			}
 			.links {
 				float: none;
@@ -962,6 +987,86 @@ section.container {
 	}
 }
 
+// Register Page
+
+.register {
+	background-image: url("../images/squared_metal.png");
+	background-size: 132px 132px;
+	.white-block {
+		max-width: 400px;
+		width: 85%;
+		margin: auto;
+		padding: 15px;
+		background-color: #eee;
+		border: 2px solid #999;
+		border-radius: 10px;
+		font-weight: 300;
+		text-align: left;
+		color: #444;
+		i.fa {
+			padding: 0 8px 0 5px;
+		}
+		h1 {
+			font-size: 120%;
+			font-weight: 600;
+		}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin-top: 15px;
+			color: #000;
+			td {
+				padding: 5px;
+				border-top: 1px solid #999;
+				border-bottom: 1px solid #999;
+				line-height: 1.5;
+			}
+			.left {
+				text-align: left;
+			}
+			.right {
+				text-align: right;
+			}
+		}
+		.note {
+			font-size: 90%;
+			margin-top: 10px;
+			text-align: center;
+		}
+	}
+	.register-now {
+		display: block;
+		margin: 20px auto;
+		text-align: center;
+		font-weight: 600;
+		font-size: 120%;
+		line-height: 1.5;
+		background-color: #F9F9F9;
+		text-decoration: none;
+		border-color: #666;
+		&:hover {
+			border-color: #000;
+			box-shadow: 0 0 5px #999;
+		}
+	}
+	.instructions {
+		max-width: 400px;
+		margin: 0 auto 20px auto;
+		font-weight: 300;
+		line-height: 1.5;
+		padding: 0 15px;
+		text-align: left;
+	}
+	@media screen and (max-width: 500px) {
+		.white-block {
+			font-size: 90%;
+		}
+		.register-now {
+			font-size: 120%;
+		}
+	}
+}
+
 // 404 Page
 
 .error404 {
@@ -977,16 +1082,6 @@ section.container {
 		}
 	}
 }
-
-// Register Page
-
-.register {
-	background-image: url("../images/squared_metal.png");
-	background-size: 132px 132px;
-
-}
-
-
 
 // Retina Display
 
