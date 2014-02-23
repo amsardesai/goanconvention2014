@@ -58,7 +58,7 @@ header {
 	box-shadow: 0 0 5px #000;
 	opacity: 0.95;
 	nav {
-		max-width: 820px;
+		max-width: 880px;
 		margin: 0 auto;
 		font-size: 120%;
 		font-weight: 300;
@@ -72,6 +72,7 @@ header {
 			height: 50px;
 			padding: 0 15px;
 			text-align: center;
+			font-size: 90%;
 			.transition(0.3s, background-color);
 			&:hover {
 				background-color: #ddd;
@@ -167,11 +168,15 @@ section.outer {
 }
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 870px) {
 	header {
 		nav {
-			.links {
-				font-size: 90%;
+			a {
+				padding: 0 10px;
+				font-size: 80%;
+			}
+			.logo {
+				width: 205px;
 			}
 		}
 	}
@@ -183,8 +188,8 @@ section.outer {
 		nav {
 			height: auto;
 			a {
-				line-height: 40px;
-				height: 40px;
+				line-height: 35px;
+				height: 35px;
 				display: block;
 			}
 			.links {
@@ -301,9 +306,9 @@ section.main {
 		opacity: 0.85;
 		border-radius: 10px;
 		font-weight: 300;
-		//.transition(0.3s);
+		.transition(0.3s, opacity);
 		&:hover {
-			//opacity: 1;
+			opacity: 1;
 		}
 		&:before {
 			font-family: "FontAwesome";
