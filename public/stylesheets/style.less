@@ -133,16 +133,16 @@ footer {
 		display: inline-block;
 		line-height: 50px;
 		padding: 0 20px;
-		.transition(0.3s, background-color);
-		&:hover {
-			background-color: #666;
-		}
 		strong {
 			font-weight: 600;
 		}
 	}
 	.left {
 		float: left;
+		.transition(0.3s, background-color);
+		&:hover {
+			background-color: #555;
+		}
 	}
 	.right {
 		float: right;
@@ -180,7 +180,7 @@ section.outer {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 750px) {
 	header {
 		nav {
 			a {
