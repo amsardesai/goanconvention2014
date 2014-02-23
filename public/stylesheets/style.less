@@ -15,14 +15,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 @heading-font: "Bad Script", cursive;
 
 .transition(@duration:0.2s, @property:all) {
-	-webkit-transition-property: @property;
-	-webkit-transition-duration: @duration;
-	-moz-transition-property: @property;
-	-moz-transition-duration: @duration;
-	-o-transition-property: @property;
-	-o-transition-duration: @duration;
-	transition-property: @property;
-	transition-duration: @duration;
+	-webkit-transition: @duration @property;
+	-moz-transition: @duration @property;
+	-o-transition: @duration @property;
+	transition: @duration @property;
 }
 
 html {
@@ -294,7 +290,7 @@ section.main {
 			clear: both;
 		}
 	}
-	.register {
+	.register-button {
 		display: inline-block;
 		padding: 20px 25px;
 		color: #000;
@@ -360,9 +356,6 @@ section.main {
 			padding: 25px 0 35px 0;
 		}
 
-		.register {
-		}
-
 		.scrolldown {
 			display: none;
 		}
@@ -390,7 +383,7 @@ section.main {
 			padding: 15px 10px 20px 10px;
 		}
 
-		.register {
+		.register-button {
 			padding: 15px 15px;
 			border-radius: 5px;
 			&:before {
@@ -972,8 +965,6 @@ section.container {
 // 404 Page
 
 .error404 {
-	background-image: url("../images/squared_metal.png");
-	background-size: 132px 132px;
 	.note {
 		font-size: 130%;
 		font-weight: 300;
@@ -986,6 +977,16 @@ section.container {
 		}
 	}
 }
+
+// Register Page
+
+.register {
+	background-image: url("../images/squared_metal.png");
+	background-size: 132px 132px;
+
+}
+
+
 
 // Retina Display
 
@@ -1014,7 +1015,7 @@ section.container {
 		background-image: url("../images/notebook_@2X.png");
 	}
 
-	.error404 {
+	.register {
 		background-image: url("../images/squared_metal_@2X.png");
 	}
 
