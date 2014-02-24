@@ -1,7 +1,7 @@
 .DS_Store
 node_modules/
 public/stylesheets/style.css
-public/javascripts/master.js
+public/javascripts/index.js
 *.psd
 data
 registration-list.csv
