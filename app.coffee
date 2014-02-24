@@ -3,6 +3,7 @@ express =     require 'express'
 fs =          require 'fs'
 multiparty =  require 'multiparty'
 mongojs =     require 'mongojs'
+csvtojson =   require 'csvtojson'
 routes =      require './routes'
 
 # Initialize Express
@@ -41,7 +42,7 @@ app.configure ->
 # development only
 app.configure 'development', -> app.use express.errorHandler()
 
-routes app
+routes app, db, multiparty, csvtojson
 
 app.listen port, ->
 	console.log 'Goan Convention 2014 running at port ' + port + ' in ' + env + ' mode'
