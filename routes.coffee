@@ -12,3 +12,8 @@ module.exports = (app) ->
 	app.get "/pastevents", (req, res) -> res.render "pastevents"
 	app.get "/register", (req, res) -> res.render "register"
 	app.get "*", (req, res) -> res.status(404).render "404"
+
+	app.post "/registration-list", (req, res) ->
+		res.json (test: 1)
+
+	app.post "*", (req, res) -> res.status(404).render "404"
