@@ -952,7 +952,6 @@ section.container {
 	h1.info {
 		font-size: 120%;
 		font-weight: 600;
-		margin-top: 5px;
 		text-align: left;
 	}
 	table {
@@ -970,6 +969,9 @@ section.container {
 			border-top: 1px solid #999;
 			border-bottom: 1px solid #999;
 			line-height: 1.5;
+		}
+		br {
+			display: none;
 		}
 		.left {
 			text-align: left;
@@ -989,6 +991,12 @@ section.container {
 		&.schedule {
 			border-collapse: separate;
 			margin-bottom: 20px;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		table br {
+			display: block;
 		}
 	}
 
