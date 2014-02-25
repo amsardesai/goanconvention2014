@@ -9,7 +9,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* ACTUAL CSS */
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800|Bad+Script");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,300italic,400italic,600italic|Bad+Script");
 
 @main-font: "Open Sans", sans-serif;
 @heading-font: "Bad Script", cursive;
@@ -945,34 +945,39 @@ section.container {
 		&.bold {
 			font-weight: 600;
 		}
+		&.italic {
+			font-style: italic;
+		}
 	}
 	h1.info {
 		font-size: 120%;
 		font-weight: 600;
 		margin-top: 5px;
+		text-align: left;
 	}
 	table {
 		border-collapse: collapse;
 		font-weight: 300;
-		width: 90%;
 		margin: auto;
-		min-width: 300px;
+		width: 95%;
 		th {
-			padding: 5px 10px;
+			padding: 5px;
 			border-bottom: 1px solid #999;
 			font-weight: 400;
 		}
 		td {
-			padding: 5px 10px;
+			padding: 5px;
 			border-top: 1px solid #999;
 			border-bottom: 1px solid #999;
 			line-height: 1.5;
 		}
 		.left {
 			text-align: left;
+			padding-right: 0;
 		}
 		.right {
 			text-align: right;
+			padding-left: 0;
 		}
 		.tbu {
 			font-style: italic;
@@ -984,6 +989,16 @@ section.container {
 		&.schedule {
 			border-collapse: separate;
 			margin-bottom: 20px;
+		}
+	}
+
+	@media screen and (max-width: 420px) {
+		table {
+			width: 100%;
+			font-size: 80%;
+			td, th {
+				padding: 5px 10px;
+			}
 		}
 	}
 
