@@ -5,9 +5,14 @@ delay = 200
 $ ->
 
 	if not Modernizr.touch
-		$(".index .main .event").css(opacity: 0).delay(delay).animate (opacity: 1), delay * 2
-		$(".index header").css(opacity: 0).delay(delay*3).animate (opacity: 0.95), delay * 2
-		$(".index .main .scrolldown").css(opacity: 0).delay(delay * 5).animate (opacity: 1), delay * 2
+		mainEvent = $(".index .main .event").css(opacity: 0).delay(delay).animate (opacity: 1), delay * 4
+		header = $(".index header").css(opacity: 0).delay(delay*2).animate (opacity: 0.95), delay * 3
+		scrollDown = $(".index .main .scrolldown").css(opacity: 0).delay(delay * 5).animate (opacity: 1), delay * 3
+
+		$(window).load ->
+			mainEvent.animate (opacity: 1), delay * 4
+			header.animate (opacity: 0.95), delay * 3
+			scrollDown.animate (opacity: 1), delay * 3	
 
 		mainMask = $(".index .main .mask").css("background-color": "black")
 		(parallax = ->

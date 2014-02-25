@@ -179,18 +179,20 @@ section.outer {
 	z-index: 2;
 }
 
+hr {
+	height: 5px;
+	margin: 5px auto;
+	padding: 0;
+	border: 0;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	width: 70%;
+}
 
-@media screen and (max-width: 750px) {
-	header {
-		nav {
-			a {
-				padding: 0 10px;
-				font-size: 80%;
-			}
-			.logo {
-				width: 210px;
-			}
-		}
+
+@media screen and (max-width: 760px) {
+	header nav a {
+		padding: 0 10px;
 	}
 }
 
@@ -202,15 +204,11 @@ section.outer {
 			a {
 				line-height: 35px;
 				height: 35px;
-				display: block;
 				&.register-menu {
-					line-height: 35px;
-					height: 35px;
-					padding: 0 15px;
-					margin: 0;
-					background-color: #fff;
-					border: 0;
-					border-radius: 0;
+					line-height: 25px;
+					height: 25px;
+					padding: 0 10px;
+					margin: 0 3px 3px 3px;
 				}
 			}
 			.links {
@@ -219,8 +217,7 @@ section.outer {
 			}
 			.logo {
 				float: none;
-				width: 100%;
-				margin: 0;
+				margin: 0 auto;
 				padding: 0;
 			}
 		}
@@ -231,6 +228,17 @@ section.outer {
 }
 
 @media screen and (max-width: 560px) {
+	header nav {
+		a {
+			padding: 0 7px;
+			&:before {
+				padding-right: 7px;
+			}
+		}
+		.links {
+			font-size: 90%;
+		}		
+	}
 	footer {
 		.container {
 			height: auto;
@@ -257,6 +265,18 @@ section.outer {
 	}
 }
 
+@media screen and (max-width: 420px) {
+	header nav {
+		.links {
+			padding-bottom: 2px;
+		}
+		a.register-menu {
+			display: block;
+			margin: 2px auto;
+			width: 80px;
+		}
+	}
+}
 
 // Main Page
 
@@ -995,9 +1015,38 @@ section.container {
 .register {
 	background-image: url("../images/squared_metal.png");
 	background-size: 132px 132px;
-	.white-block {
-		max-width: 400px;
-		width: 85%;
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		margin: 15px auto 0 auto;
+		color: #000;
+		text-align: center;
+		th {
+			padding: 5px;
+			border-bottom: 2px solid #999;
+			line-height: 1.5;
+			font-weight: 600;
+		}
+		td {
+			padding: 5px;
+			border-top: 1px solid #999;
+			border-bottom: 1px solid #999;
+			line-height: 1.5;
+		}
+		.left {
+			text-align: left;
+		}
+		.right {
+			text-align: right;
+		}
+	}
+	section.container {
+		max-width: 720px;
+		margin: auto;
+	}
+	.big-block {
+		max-width: 500px;
+		width: 80%;
 		margin: auto;
 		padding: 15px;
 		background-color: #eee;
@@ -1012,24 +1061,6 @@ section.container {
 		h1 {
 			font-size: 120%;
 			font-weight: 600;
-		}
-		table {
-			border-collapse: collapse;
-			width: 100%;
-			margin-top: 15px;
-			color: #000;
-			td {
-				padding: 5px;
-				border-top: 1px solid #999;
-				border-bottom: 1px solid #999;
-				line-height: 1.5;
-			}
-			.left {
-				text-align: left;
-			}
-			.right {
-				text-align: right;
-			}
 		}
 		.note {
 			font-size: 90%;
@@ -1056,16 +1087,92 @@ section.container {
 		max-width: 400px;
 		margin: 0 auto 20px auto;
 		font-weight: 300;
+		font-size: 110%;
 		line-height: 1.5;
 		padding: 0 15px;
+		text-align: center;
+	}
+	.registrants-head {
+		i.fa {
+			padding-right: 10px;
+		}
+		font-size: 130%;
+		background-color: transparent;
+		width: 95%;
+		margin: 20px auto;
+		text-align: center;
+	}
+	.registrants {
+		width: 90%;
+		max-width: 500px;
+		margin: 10px auto 20px auto;
 		text-align: left;
+		.family {
+			clear: both;
+			height: 30px;
+			line-height: 30px;
+			position: relative;
+			.lastname {
+				display: inline-block;
+				float: left;
+				font-size: 120%;
+				font-weight: 400;
+				margin-right: 5px;
+			}
+			.guests {
+				display: inline-block;
+				float: left;
+				font-weight: 300;
+			}
+			.city {
+				display: inline-block;
+				float: right;
+			}
+		}
+	}
+	@media screen and (max-width: 840px) {
+		.column.register, .column.list {
+			width: 100%;
+		}
+		hr {
+			display: block;
+		}
+		.registrants-head {
+			margin-top: 20px;
+		}
 	}
 	@media screen and (max-width: 500px) {
-		.white-block {
+		.big-block {
 			font-size: 90%;
 		}
 		.register-now {
 			font-size: 120%;
+		}
+		.registrants {
+			font-size: 90%;
+			margin-bottom: 0;
+			.family {
+				height: 45px;
+				line-height: 20px;
+				padding-bottom: 5px;
+				.lastname {
+					height: 25px;
+					line-height: 25px;
+					font-size: 140%;
+				}
+				.guests {
+					clear: left;
+				}
+				.city {
+					height: 25px;
+					line-height: 25px;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 350px) {
+		.white-block {
+			font-size: 80%;
 		}
 	}
 }

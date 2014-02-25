@@ -4,14 +4,14 @@ block head
 	-var title = "Register - Goan Convention 2014";
 	-var bodyClass = "register"
 	script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+	script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js')
 	script(type='text/javascript', src='/javascripts/modernizr.min.js')
 	script(type='text/javascript', src='/javascripts/register.js')
-
 
 block content
 	section.container
 		.head REGISTRATION
-		.white-block
+		.big-block
 			h1 
 				i.fa.fa-info-circle
 				| Early Bird Registration Prices
@@ -30,7 +30,13 @@ block content
 						td.left Child (age 5 and under)
 						td.right Free
 			.note Early bird prices available till March 31, 2014
-		a.white-block.register-now(href="http://events.r20.constantcontact.com/register/event?llr=q6yb97pab&oeidk=a07e8z15x1377ca2e13",target="_blank") 
+		a.big-block.register-now(href="http://events.r20.constantcontact.com/register/event?llr=q6yb97pab&oeidk=a07e8z15x1377ca2e13",target="_blank") 
 			i.fa.fa-check-circle
 			| Official Registration Page
-		.instructions Click on the button above to go to the official registration page of the 2014 Goan Convention. 
+		.instructions Click above for the official registration page of the 2014 Goan Convention.
+		.whoscoming
+			hr
+			.registrants-head
+				i.fa.fa-globe 
+				| Who's Coming So Far?
+			.registrants

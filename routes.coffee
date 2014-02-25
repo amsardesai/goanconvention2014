@@ -46,7 +46,7 @@ module.exports = (app, db, multiparty, csvtojson) ->
 				guestFirst = row['Guest of First Name']
 				guestLast = row['Guest of Last Name']
 
-				if (guestFirst and guestLast)
+				if guestFirst and guestLast
 					# is a guest
 					db.families.update (
 						first: guestFirst
