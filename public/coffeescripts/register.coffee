@@ -32,7 +32,7 @@ $ ->
 			registrants.find(".family").each (i) ->
 				offset = 70
 				scanSpeed = 10
-				layingSpeed = 3
+				layingSpeed = 2
 
 				$(this).delay(delay*i/scanSpeed).waypoint
 					handler: (dir) ->
@@ -41,7 +41,7 @@ $ ->
 					triggerOnce: true
 
 	if weCanAnimate
-		$(window).load -> container.animate (opacity: 1), delay * 3 
+		$(window).load -> container.animate (opacity: 1), delay * 2
 
 
 
