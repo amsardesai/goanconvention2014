@@ -25,18 +25,29 @@ module.exports = (app, db, multiparty, csvtojson) ->
 			res.json data
 
 	app.post "/registration-list", (req, res) ->
-		output = (success, err) ->
-			err = err or ""
-			res.json (success: success, error: err)
+
+		output = (code, success, message) ->
+			message = message or ""
+			res.status(code).json (success: success, message: message)
+
+		unless req.headers['content-type']? and req.headers['content-type'].substring(0, 19) is "multipart/form-data"
+			output 403, false, "You did not upload a file!"
+			return
 
 		form = new multiparty.Form()
 		form.parse req, (err, fields, files) ->
-			if not files.file? 
-				output false, "Invalid POST request!"
+
+			unless fields.pass? and fields.pass[0] is process.env.AUTH_PASS
+				output 401, false, "Invalid password! Password must be in 'pass' parameter."
+				return
+
+			unless files.file? 
+				output 403, false, "Invalid POST request! File must be in 'file' parameter."
 				return
 
 			converter = new csvtojson.core.Converter()
 			path = files.file[0].path
+			results = []
 
 			converter.on "record_parsed", (row, raw, i) ->
 				first = row['First Name:']
@@ -58,7 +69,7 @@ module.exports = (app, db, multiparty, csvtojson) ->
 							)
 						)
 					)
-					console.log "-> \"" + first + "\" has been added as a guest of " + guestFirst + " " + guestLast
+					results.push "-> " + first + " has been added as a guest of " + guestFirst + " " + guestLast
 				else
 					# is a leader
 					db.families.insert (
@@ -68,9 +79,9 @@ module.exports = (app, db, multiparty, csvtojson) ->
 						state: state
 						guests: []
 					)
-					console.log "\"" + first + " " + last + "\" lives in \"" + city + ", " + state + "\""
+					results.push first + " " + last + " lives in " + city + ", " + state
 
-			output true
+			converter.on "end_parsed", (json) -> output 200, true, results
 
 			db.families.remove {}, -> converter.from path
 
