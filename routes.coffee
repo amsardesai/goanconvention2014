@@ -50,12 +50,12 @@ module.exports = (app, db, multiparty, csvtojson) ->
 			results = []
 
 			converter.on "record_parsed", (row, raw, i) ->
-				first = row['First Name:']
-				last = row['Last Name:']
-				city = row['City:']
-				state = row['State:']
-				guestFirst = row['Guest of First Name']
-				guestLast = row['Guest of Last Name']
+				first = raw[0]
+				last = raw[1]
+				city = raw[2]
+				state = raw[3]
+				guestFirst = raw[4]
+				guestLast = raw[5]
 
 				if guestFirst and guestLast
 					# is a guest
