@@ -454,6 +454,9 @@ section.where {
 	text-align: center;
 	background-image: url("../images/notebook.png");
 	background-size: 300px 154px;
+	.head {
+		padding-bottom: 14px;
+	}
 	a {
 		display: block;
 		text-decoration: none;
@@ -464,13 +467,15 @@ section.where {
 		padding-top: 13px;
 		padding-bottom: 19px;
 		margin: auto;
+		max-width: 480px;
 		.hotel {
-			font-size: 200%;
+			font-size: 140%;
 			font-weight: 400;
-			padding-bottom: 13px;
+			padding-bottom: 25px;
+			line-height: 26px;
 		}
-		&:hover {
-			//color: #666;
+		&:hover .hotel {
+			color: #666;
 		}
 	}
 	@media screen and (max-width: 500px) {
