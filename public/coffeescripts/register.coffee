@@ -7,10 +7,6 @@ $ ->
 	weCanAnimate = not Modernizr.touch and $(window).width() > 680
 	
 	registrants = $(".registrants")
-	container = $("section.container")
-
-	if weCanAnimate
-		container.css(opacity: 0).delay(delay/2)
 
 	$.getJSON "/registration-list", (data, textStatus, jqXHR) ->
 
@@ -39,9 +35,6 @@ $ ->
 						$(this).animate (opacity: 1), delay * layingSpeed
 					offset: "95%"
 					triggerOnce: true
-
-	if weCanAnimate
-		$(window).load -> container.animate (opacity: 1), delay * 2
 
 
 
