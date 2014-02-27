@@ -90,6 +90,9 @@ header {
 				&:hover {
 					background-color: #ddd;
 				}
+				&:before {
+					padding-right: 7px;
+				}
 			}
 		}
 		.logo {
@@ -196,9 +199,15 @@ hr {
 }
 
 
-@media screen and (max-width: 760px) {
-	header nav a {
-		padding: 0 10px;
+@media screen and (max-width: 770px) {
+	header nav {
+		.logo {
+			width: 205px;
+		}
+		a {
+			font-size: 85%;
+			padding: 0 7px;
+		}
 	}
 }
 
@@ -236,7 +245,7 @@ hr {
 @media screen and (max-width: 560px) {
 	header nav {
 		a {
-			padding: 0 7px;
+			padding: 0 5px;
 			&:before {
 				padding-right: 7px;
 			}
@@ -273,13 +282,19 @@ hr {
 
 @media screen and (max-width: 420px) {
 	header nav {
+		a {
+			padding: 0 10px;
+			&:before {
+				padding-right: 7px;
+			}
+			&.register-menu {
+				display: block;
+				margin: 2px auto;
+				width: 100px;
+			}
+		}
 		.links {
 			padding-bottom: 2px;
-		}
-		a.register-menu {
-			display: block;
-			margin: 2px auto;
-			width: 80px;
 		}
 	}
 }
@@ -454,7 +469,6 @@ section.main {
 
 
 section.where {
-	height: 231px;
 	text-align: center;
 	background-image: url("../images/notebook.png");
 	background-size: 300px 154px;
@@ -467,25 +481,34 @@ section.where {
 		font-size: 130%;
 		line-height: 26px;
 		padding-top: 13px;
-		padding-bottom: 19px;
+		padding-bottom: 25px;
 		margin: auto;
 		max-width: 480px;
 		.hotel {
+			max-width: 90%;
+			width: 600px;
+			margin: auto;
 			font-size: 140%;
 			font-weight: 400;
 			padding-bottom: 25px;
 			line-height: 26px;
 		}
-		&:hover .hotel {
-			color: #666;
+		&:hover {
+			color: #555; 
+			.hotel {
+				color: #888;
+			}
 		}
 	}
 	@media screen and (max-width: 500px) {
 		a {
-			font-size: 110%;
+			padding-bottom: 25px;
+			padding-top: 13px;
 			.hotel {
-				font-size: 170%;
-			}			
+				font-size: 100%;
+				padding-bottom: 0;
+				padding-top: 0;
+			}
 		}
 	}
 }
@@ -805,7 +828,8 @@ section.container {
 			margin-right: 10px;
 		}
 		&:hover {
-			color: #666;
+			color: #888;
+			text-decoration: underline;
 		}
 	}
 	.item {
@@ -926,6 +950,9 @@ section.container {
 		max-width: 720px;
 		margin: auto;
 	}
+	i.fa {
+		padding-right: 7px;
+	}
 	.info {
 		line-height: 1.5;
 		max-width: 720px;
@@ -935,6 +962,15 @@ section.container {
 		}
 		padding: 0 10px;
 		margin-bottom: 15px;
+	}
+	a.info {
+		display: block;
+		text-align: left;
+		font-size: 110%;
+		&:hover {
+			color: #888;
+			text-decoration: underline;
+		}
 	}
 	p.info {
 		font-size: 110%;
@@ -1104,7 +1140,7 @@ section.container {
 			}
 		}
 		i.fa {
-			padding: 0 8px 0 5px;
+			padding: 0 8px 0 2px;
 		}
 		h1 {
 			font-size: 110%;
