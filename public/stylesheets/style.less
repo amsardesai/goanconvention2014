@@ -135,14 +135,10 @@ footer {
 		}
 	}
 	.left {
-		float: left;
 		.transition(0.3s, background-color);
 		&:hover {
 			background-color: #555;
 		}
-	}
-	.right {
-		float: right;
 	}
 }
 
@@ -151,6 +147,14 @@ footer {
 a {
 	text-decoration: none;
 	color: #000;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
 }
 
 .head {
@@ -977,10 +981,12 @@ section.container {
 		.left {
 			text-align: left;
 			padding-right: 0;
+			float: none;
 		}
 		.right {
 			text-align: right;
 			padding-left: 0;
+			float: none;
 		}
 		.tbu {
 			font-style: italic;
@@ -1077,12 +1083,6 @@ section.container {
 	section.container {
 		max-width: 660px;
 		margin: auto;
-	}
-	.left {
-		float: left;
-	}
-	.right {
-		float: right;
 	}
 	.big-block {
 		max-width: 285px;
