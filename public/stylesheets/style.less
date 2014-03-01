@@ -1327,7 +1327,23 @@ section.container {
 		background-color: #fff;
 	}
 
-	header,
+	header {
+		position: static;
+		box-shadow: none;
+		nav {
+			.links {
+				display: none;
+			}
+			.logo {
+				width: 100%;
+				text-align: center;
+				float: none;
+				padding: 2px 0 0 0;
+			}
+		}
+	}
+
+	.index header,
 	section.main .scrolldown,
 	section.where,
 	section.blurred,
@@ -1340,7 +1356,11 @@ section.container {
 
 	h1 {
 		padding-top: 10px;
-		padding-bottom: 10px;
+		padding-bottom: 20px;
+		font-size: 120%;
+		&:before, &:after {
+			margin: 7px 15px 3px 15px;
+		}
 	}
 
 	section.container {
@@ -1349,40 +1369,48 @@ section.container {
 
 	.schedule {
 		em {
-			font-size: 70%;
+			font-size: 65%;
 		}
 		.print {
 			display: none;
 		}
 		.item {
-			font-size: 70%;
+			font-size: 65%;
 			margin-top: 10px;
-			border-color: #f9f9f9;
-			box-shadow: none;
 		}
 		.schedule-table {
-			font-size: 70%;
+			font-size: 65%;
 			margin-top: 10px;
 			border: 0;
-			border-spacing: 0 1px;
-			td, th {
-				border-color: #ddd;
+			border-spacing: 5px 2px;
+			th {
+				padding-bottom: 5px;
 			}
 			.schedule-time {
 				padding: 3px 0;
-			}
-			.schedule-event {
-				border-color: #f9f9f9;
-				box-shadow: none;
 			}
 		}
 	}
 
 	.sponsors {
-		background-image: none;
 		font-size: 60%;
 		.info {
 			margin-bottom: 10px;
+		}
+	}
+
+	.register {
+		background-image: none;
+		.big-block {
+			background-color: #fff;
+		}
+		.instructions, .register-now {
+			display: none;
+		}
+		.registrants .family {
+			opacity: 1 !important;
+			height: 25px;
+			line-height: 25px;
 		}
 	}
 
