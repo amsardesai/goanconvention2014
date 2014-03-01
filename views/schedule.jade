@@ -6,11 +6,12 @@ block head
 
 block content
 	section.container
-		.head SCHEDULE
+		h1 SCHEDULE
 		em <strong>NOTE:</strong> The following is a tentative schedule only &mdash; it is subject to change.
-		.item.youth For Youth
-		.item.adult For Adults
-		.item.major For Everyone
+		ul
+			li.item.youth For Youth
+			li.item.adult For Adults
+			li.item.major For Everyone
 		a.print(href="javascript:if(window.print)window.print()") 
 			i.fa.fa-print
 			| Print this page

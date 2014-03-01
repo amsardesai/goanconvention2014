@@ -8,22 +8,23 @@ block head
 	script(type='text/javascript', src='/javascripts/index.js')
 
 block content
-	#fb-root
 	section.inner.main
 		.event
-			.eventTop The 12th biennial
-			.eventName Goan Convention
-			.eventDetails
+			h3.eventTop The 12th biennial 
+			h2.eventName Goan Convention
+			h3.eventDetails
 				.date July 4 - 6, 2014
 				.location Pittsburgh, PA
-			.eventInfo Bringing Goans together from all over North America to celebrate culture and heritage
-			a.register-button.fa-check-circle(href="http://events.r20.constantcontact.com/register/event?llr=q6yb97pab&oeidk=a07e8z15x1377ca2e13",target="_blank") Register Now!
-			a.scrolldown
-				i.animateIcon.fa.fa-angle-double-down.fa-lg
+			h4.eventInfo Bringing Goans together from all over North America to celebrate culture and heritage
+			a.register-button(href="http://events.r20.constantcontact.com/register/event?llr=q6yb97pab&oeidk=a07e8z15x1377ca2e13",target="_blank") 
+				i.fa.fa-check-circle
+				| Register Now!
+			.scrolldown
+				i.fa.fa-angle-double-down.fa-lg
 				| Scroll down for more
 		.mask
 	section.outer.where
-		.head HOTEL
+		h1 HOTEL
 		a(href="https://www.google.ca/maps/place/data=!3m1!4b1!4m2!3m1!1s0x0:0x981ab971eddf30d4",target="_blank")
 			.hotel Sheraton Pittsburgh Airport Hotel
 			| 1160 Thorn Run Rd<br />
@@ -31,14 +32,14 @@ block content
 			| United States
 	section.inner.blurred.goa
 		.bigbox
-			.head ABOUT GOA
+			h1 ABOUT GOA
 			.description <strong>Goa</strong> is India's smallest state and one of its most prominent tourist attractions. Its location is shown on the map below.
-			.worldmap
+			img.worldmap(src="/images/worldmap_@2X.png",alt="Goa's Location on a World Map")
 			.description Goa is home to beautiful beaches, various cultures, and very tasty fish.
 	section.inner.pic.goa
 		.caption Palolem Beach, Goa
 	section.outer.more
-		i.animateIcon.fa.fa-exclamation-circle
+		i.fa.fa-exclamation-circle
 		| More content coming soon, so keep checking back for updates!
 	section.inner.misc
 		.misccontainer
@@ -50,3 +51,4 @@ block content
 			a.notice.mapofgoans(href="http://mapofgoans.ankitsardesai.ca",target="_blank")
 				i.fa.fa-map-marker.fa-lg
 				| Map of Goans in North America
+	#fb-root

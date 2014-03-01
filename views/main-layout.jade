@@ -21,13 +21,28 @@ html(lang="en")
 		header
 			nav
 				a.logo(href="/")
-				.links
-					a.fa-calendar(href="/schedule") Schedule
-					a.fa-money(href="/sponsors") Sponsors
-					a.fa-flag(href="/pastevents") Past Events
-					a.fa-info-circle.register-menu(href="/register") Registration Info
+					img(src="/images/logo_@2X.png",alt="Goan Convention 2014")
+				ul.links
+					li
+						a(href="/schedule")
+							i.fa.fa-calendar
+							| Schedule
+					li
+						a(href="/sponsors")
+							i.fa.fa-money
+							| Sponsors
+					li
+						a(href="/pastevents")
+							i.fa.fa-flag
+							| Past Events
+					li
+						a.register-menu(href="/register")
+							i.fa.fa-info-circle
+							| Registration Info
 		block content
 		footer
-			.container
-				a.right Presented by the <strong>2014 Goan Convention Committee</strong>
-				a.left(href="http://ankitsardesai.ca/") Designed by <strong>Ankit Sardesai</strong>
+			ul.container
+				li
+					a.right Presented by the <strong>2014 Goan Convention Committee</strong>
+				li
+					a.left(href="http://ankitsardesai.ca/") Designed by <strong>Ankit Sardesai</strong>
