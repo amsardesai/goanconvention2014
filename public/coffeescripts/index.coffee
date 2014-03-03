@@ -5,14 +5,20 @@ delay = 200
 $ ->
 
 	if not Modernizr.touch
-		mainEvent = $(".index .main .event").css(opacity: 0).delay(delay)
-		header = $(".index header").css(opacity: 0).delay(delay*2)
-		scrollDown = $(".index .main .scrolldown").css(opacity: 0).delay(delay * 3)
+		mainEvent = $(".index .main .event").css(opacity: 0)
+		header = $(".index header").css(opacity: 0)
+		scrollDown = $(".index .main .scrolldown").css(opacity: 0)
+		
+		animated = false
+		fadeInEverything = ->
+			if not animated
+				mainEvent.delay(delay).animate (opacity: 1), delay * 4
+				header.delay(delay*2).animate (opacity: 0.95), delay * 3
+				scrollDown.delay(delay*3).animate (opacity: 1), delay * 4
+				animated = true
 
-		$(window).load ->
-			mainEvent.animate (opacity: 1), delay * 4
-			header.animate (opacity: 0.95), delay * 3
-			scrollDown.animate (opacity: 1), delay * 4
+		$(window).load fadeInEverything
+		setTimeout fadeInEverything, 2500
 
 		mainMask = $(".index .main .mask").css("background-color": "black")
 		(parallax = ->
