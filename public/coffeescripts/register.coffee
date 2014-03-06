@@ -4,7 +4,7 @@ alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
 
 $ ->
 
-	weCanAnimate = not Modernizr.touch and $(window).width() > 680
+	#weCanAnimate = not Modernizr.touch and $(window).width() > 680
 	
 	registrants = $(".registrants")
 
@@ -21,20 +21,20 @@ $ ->
 			guests = $("<div>").addClass("guests").html guestList
 
 			family.append lastname, city, guests
-			if weCanAnimate then family.css(opacity: 0)
+			#if weCanAnimate then family.css(opacity: 0)
 			registrants.append family
 
-		if weCanAnimate
-			registrants.find(".family").each (i) ->
-				offset = 70
-				scanSpeed = 10
-				layingSpeed = 2
+		#if weCanAnimate
+		#	registrants.find(".family").each (i) ->
+		#		offset = 70
+		#		scanSpeed = 10
+		#		layingSpeed = 2
 
-				$(this).delay(delay*i/scanSpeed).waypoint
-					handler: (dir) ->
-						$(this).animate (opacity: 1), delay * layingSpeed
-					offset: "95%"
-					triggerOnce: true
+		#		$(this).delay(delay*i/scanSpeed).waypoint
+		#			handler: (dir) ->
+		#				$(this).animate (opacity: 1), delay * layingSpeed
+		#			offset: "95%"
+		#			triggerOnce: true
 
 
 
