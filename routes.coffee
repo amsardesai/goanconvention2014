@@ -16,7 +16,7 @@ module.exports = (app, db, multiparty, csvtojson) ->
 	app.get "/pastevents", (req, res) -> res.render "pastevents"
 
 	app.get "/register", (req, res) -> 
-		db.families.find({}, (_id: 0)).sort (last: 1), (err, data) ->
+		db.families.find().sort (last: 1), (err, data) ->
 			res.render "register", (families: data)
 
 
