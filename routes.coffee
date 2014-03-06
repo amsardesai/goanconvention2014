@@ -14,15 +14,13 @@ module.exports = (app, db, multiparty, csvtojson) ->
 	app.get "/schedule", (req, res) -> res.render "schedule"
 	app.get "/sponsors", (req, res) -> res.render "sponsors"
 	app.get "/pastevents", (req, res) -> res.render "pastevents"
-	app.get "/register", (req, res) -> res.render "register"
 
-
-	# Registration List REST API
-
-	app.get "/registration-list", (req, res) ->
-		res.header "Content-type", "text/json"
+	app.get "/register", (req, res) -> 
 		db.families.find({}, (_id: 0)).sort (last: 1), (err, data) ->
-			res.json data
+			res.render "register", (families: data)
+
+
+	# Registration List POST
 
 	app.post "/registration-list", (req, res) ->
 
