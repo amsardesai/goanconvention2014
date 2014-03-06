@@ -10,6 +10,7 @@ $ ->
 
 	$.getJSON "/registration-list", (data, textStatus, jqXHR) ->
 
+		registrants.empty()
 		for row in data
 			family = $("<div>").addClass "family"
 			city = $("<div>").addClass("city").text row.city + ", " + row.state
