@@ -14,6 +14,7 @@ module.exports = (app, db, multiparty, csvtojson) ->
 	app.get "/schedule", (req, res) -> res.render "schedule"
 	app.get "/sponsors", (req, res) -> res.render "sponsors"
 	app.get "/pastevents", (req, res) -> res.render "pastevents"
+	app.get "/committee", (req, res) -> res.render "committee"
 
 	app.get "/register", (req, res) -> 
 		db.families.find().sort (last: 1), (err, data) ->
