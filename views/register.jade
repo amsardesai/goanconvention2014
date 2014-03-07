@@ -7,7 +7,7 @@ block head
 block content
 	section.container
 		h1 REGISTRATION
-		.instructions There are two ways to register. You can register and pay online, or you can fill a form and mail it with a cheque. Please select your option below. 
+		.instructions <strong>There are two ways to register.</strong> You can register and pay online, or you can fill a form and mail it with a cheque. Please select your option below. 
 		a.big-block.left.register-now(href="http://events.r20.constantcontact.com/register/event?llr=q6yb97pab&oeidk=a07e8z15x1377ca2e13",target="_blank") 
 			i.fa.fa-check-circle
 			| Online Registration Page
@@ -26,8 +26,8 @@ block content
 					.guests  &mdash; #{family.first}
 						each guest in family.guests
 							| , #{guest}
-		hr
-		.big-block.left
+		//-hr
+		//-.big-block.left
 			h3 
 				i.fa.fa-info-circle
 				| Early Bird Registration Prices
@@ -50,7 +50,7 @@ block content
 							span.notbold (age 5 and under)
 						td.right Free
 			.note Early bird prices available till March 31, 2014. Prices do not include hotel accommodation. 
-		.big-block.right
+		//-.big-block.right
 			h3 
 				i.fa.fa-building-o
 				a(href="http://www.sheratonpittsburghairport.com/",target="_blank") Sheraton Pittsburgh Airport Hotel
@@ -72,10 +72,10 @@ block content
 						td.left Phone Number
 						td.right <a href="tel:+14122622400">+1 (412) 262-2400</a>
 			.note Taxes extra. Discounted prices available till June 15, 2014. Call soon to reserve your room.
-		.big-block.left
+		//-.big-block.left
 			h3 
 				i.fa.fa-clock-o
 				| Date of the Convention
 			.bignote.fat.left July 4 - 6, 2014
 			.bignote.right <a href="/schedule">View Schedule</a>
-		.clear
+		//-.clear
