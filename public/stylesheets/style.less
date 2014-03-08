@@ -24,9 +24,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 @schedule-table-border: #ccc;
 
-@mobile-threshold: 720px;
-
-
 .transition(@duration:0.2s, @property:all) {
 	-webkit-transition-duration: @duration;
 	-webkit-transition-property: @property;
@@ -71,7 +68,7 @@ header {
 	box-shadow: 0 0 5px #000;
 	opacity: 0.95;
 	nav {
-		max-width: 1000px;
+		max-width: 1200px;
 		margin: 0 auto;
 		font-size: 120%;
 		font-weight: 300;
@@ -108,13 +105,13 @@ header {
 					border-color: darken(@brown, 20%);
 				}
 				i.fa {
-					padding-right: 7px;
+					padding-right: 5px;
 				}
 			}
 		}
 		.logo {
 			float: left;
-			padding: 0;
+			padding: 0 5px;
 			height: 50px;
 			overflow: hidden;
 			img {
@@ -123,6 +120,8 @@ header {
 		}
 		.links {
 			float: right;
+			height: 50px;
+			padding-right: 5px;
 		}
 	}
 }
@@ -220,64 +219,44 @@ hr {
 }
 
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 959px) {
 	header nav {
+		height: auto;
+		max-width: 720px;
+		min-width: 0;
+		li {
+			float: none;
+		}
 		a {
-			i.fa {
-				padding-right: 7px;
+			line-height: 40px;
+			height: 40px;
+			padding: 0 10px;
+			&.register-menu {
+				line-height: 30px;
+				height: 30px;
+				margin: 2px 3px 3px 3px;
 			}
-			font-size: 80%;
-			padding: 0 7px;
+		}
+		.logo {
+			float: none;
+			padding: 0 10px;
+		}
+		.links {
+			float: none;
+			height: auto;
+			font-size: 90%;
+			padding-right: 0;
 		}
 	}
 }
 
-@media screen and (max-width: @mobile-threshold) {
-	header {
-		position: relative;
-		nav {
-			height: auto;
-			a {
-				line-height: 35px;
-				height: 35px;
-				&.register-menu {
-					line-height: 25px;
-					height: 25px;
-					padding: 0 9px;
-					margin: 0 3px 3px 3px;
-				}
-			}
-			li {
-				float: none;
-			}
-			.links {
-				float: none;
-				font-size: 90%;
-			}
-			.logo {
-				float: none;
-				margin: 0 auto;
-				padding: 0;
-			}
-		}
-	}
-	footer {
+@media screen and (max-width: 680px) {
+	header, footer {
 		position: relative;
 	}
 }
 
 @media screen and (max-width: 560px) {
-	header nav {
-		a {
-			padding: 0 5px;
-			&:before {
-				padding-right: 7px;
-			}
-		}
-		.links {
-			font-size: 90%;
-		}		
-	}
 	footer {
 		.container {
 			height: auto;
@@ -304,25 +283,6 @@ hr {
 	}
 }
 
-@media screen and (max-width: 450px) {
-	header nav {
-		a {
-			padding: 0 10px;
-			&:before {
-				padding-right: 7px;
-			}
-			&.register-menu {
-				display: block;
-				margin: 2px auto;
-				width: 140px;
-			}
-		}
-		.links {
-			padding-bottom: 2px;
-		}
-	}
-}
-
 // Main Page
 
 .index footer {
@@ -332,7 +292,7 @@ hr {
 section.main {
 	height: 100%;
 	width: 100%;
-	min-height: 650px;
+	min-height: 690px;
 	background-color: #000;
 	background-position: center 0;
 	background-repeat: no-repeat;
@@ -416,6 +376,12 @@ section.main {
 		left: 0;
 		right: 0;
 		bottom: 0;
+	}
+
+	@media screen and (max-width: 959px) {
+		.eventTop {
+			padding-top: 100px;
+		}
 	}
 	@media screen and (max-width: 680px) {
 		height: 550px;
@@ -810,9 +776,15 @@ section.container {
 	}
 }
 
-@media screen and (max-width: @mobile-threshold) {
+@media screen and (max-width: 959px) {
 	section.container {
-		padding: 20px 0;
+		padding-top: 120px;
+	}
+}
+
+@media screen and (max-width: 680px) {
+	section.container {
+		padding: 28px 0 20px 0;
 	}
 }
 
@@ -1329,7 +1301,7 @@ section.container {
 	.registrants {
 		width: 90%;
 		max-width: 500px;
-		margin: 0 auto 30px auto;
+		margin: 0 auto 10px auto;
 		text-align: left;
 		.family {
 			clear: both;
