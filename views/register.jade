@@ -18,6 +18,7 @@ block content
 		.registrants-head
 			i.fa.fa-globe 
 			| Who's Coming So Far?
+		//googleoff: all
 		.registrants
 			each family in families
 				.family
@@ -26,6 +27,7 @@ block content
 					.guests  &mdash; #{family.first}
 						each guest in family.guests
 							| , #{guest}
+		//googleon: all
 		//-hr
 		//-.big-block.left
 			h3 
