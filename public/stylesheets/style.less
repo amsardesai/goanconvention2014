@@ -24,6 +24,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 @schedule-table-border: #ccc;
 
+@mobile-threshold: 720px;
+
 
 .transition(@duration:0.2s, @property:all) {
 	-webkit-transition-duration: @duration;
@@ -69,7 +71,7 @@ header {
 	box-shadow: 0 0 5px #000;
 	opacity: 0.95;
 	nav {
-		max-width: 880px;
+		max-width: 1000px;
 		margin: 0 auto;
 		font-size: 120%;
 		font-weight: 300;
@@ -218,7 +220,7 @@ hr {
 }
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 840px) {
 	header nav {
 		a {
 			i.fa {
@@ -230,7 +232,7 @@ hr {
 	}
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: @mobile-threshold) {
 	header {
 		position: relative;
 		nav {
@@ -808,7 +810,7 @@ section.container {
 	}
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: @mobile-threshold) {
 	section.container {
 		padding: 20px 0;
 	}
@@ -1096,6 +1098,85 @@ section.container {
 			border-color: #555;
 		}
 	}
+}
+
+// Team Page
+
+.team {
+	section.container {
+		max-width: 720px;
+		margin: auto;
+		em.info {
+			font-weight: 300;
+			display: block;
+			margin-bottom: 30px;
+		}
+	}
+	.contributor {
+		max-width: 90%;
+		width: 90%;
+		min-height: 100px;
+		padding-bottom: 20px;
+		margin: 20px auto 0 auto;
+		position: relative;
+		border-bottom: 1px solid #ccc;
+		img.picture {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+		}
+		.name {
+			display: inline-block;
+			float: left;
+			clear: left;
+			line-height: 40px;
+			font-size: 150%;
+			font-weight: 300;
+			margin-left: 120px;
+		}
+		.role {
+			display: inline-block;
+			float: left;
+			clear: left;
+			margin-left: 120px;
+			font-size: 110%;
+
+		}
+		.buttonlink {
+			display: inline-block;
+			float: right;
+			background-color: #fff;
+			border: 2px solid #999;
+			border-radius: 50%;
+			padding: 5px;
+			margin: 5px;
+			text-align: center;
+			width: 30px;
+			font-weight: 300;
+			line-height: 30px;
+			height: 30px;
+			&.tel {
+				padding-top: 6px;
+				padding-bottom: 4px;
+			}
+			&:hover, &:focus {
+				border-color: #444;
+			}
+		}
+		&.last {
+			border: 0;
+		}
+
+
+
+
+	}
+
+
+
+
 }
 
 // Register Page
