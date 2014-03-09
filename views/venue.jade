@@ -3,8 +3,36 @@ extends main-layout
 block head
 	-var title = "Venue - Goan Convention 2014";
 	-var bodyClass = "venue"
+	script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+	script(type='text/javascript', src='http://maps.googleapis.com/maps/api/js?key=AIzaSyByK4l8jyTfjhjacWWkfQZZ32-PF417VWo&sensor=false')
+	script(type='text/javascript', src='/javascripts/venue.js')
 
 block content
 	section.container
 		h1 VENUE
-		
+		p.info This year's Goan Convention will be held in:
+		p.info.big Sheraton Pittsburgh Airport Hotel
+		a.button(href="http://www.sheratonpittsburghairport.com/",target="_blank")
+			i.fa.fa-globe
+			| Website
+		a.button(href="http://www.starwoodhotels.com/sheraton/rates/room.html?departureDate=2014-07-06&ctx=search&arrivalDate=2014-07-04&EM=VTY_SI_3725_PITTSBURGHAIRPORTRESERVATIONS_PRE_DECIDER&priceMin=&propertyId=3725&sortOrder=&roomOccupancyTotal=2&accessible=&language=en_US&numberOfAdults=2&bedType=&priceMax=&currencyCode=&nonSmoking=",target="_blank")
+			i.fa.fa-check-circle
+			strong Book Rooms
+		table
+			tbody
+				tr
+					td.left Address
+					td.right <a href="https://www.google.ca/maps/place/data=!3m1!4b1!4m2!3m1!1s0x0:0x981ab971eddf30d4" target="_blank">1160 Thorn Run Rd<br />Coraopolis, PA 15108</a>
+				tr
+					td.left Room Type
+					td.right Single &amp; Double Beds
+				tr
+					td.left Pricing
+					td.right US $105
+				tr
+					td.left What's Included?
+					td.right Airport Shuttle<br />Self-Parking<br />Breakfast &amp; Wi-Fi
+				tr
+					td.left Phone Number
+					td.right <a href="tel:+14122622400">+1 (412) 262-2400</a>
+	#map

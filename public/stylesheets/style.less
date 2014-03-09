@@ -135,7 +135,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: 1;
+	z-index: 20;
 	.container {
 		max-width: 720px;
 		margin: auto;
@@ -1070,6 +1070,117 @@ section.container {
 	}
 }
 
+// Venue Page
+
+.venue {
+	box-sizing: border-box;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	section.container {
+		position: absolute;
+		top: 70px;
+		left: 20px;
+		width: 360px;
+		background-color: lighten(@brown, 40%);
+		border: 2px solid @brown;
+		border-radius: 10px;
+		z-index: 2;
+		margin: 0;
+		padding: 20px 0;
+		box-shadow: 0 0 5px #000;
+		&.hide {
+			display: none;
+		}
+	}
+	.info {
+		font-weight: 300;
+		margin-bottom: 10px;
+		line-height: 1.5;
+		&.big {
+			font-size: 130%;
+			font-weight: 400;
+		}
+	}
+	.button {
+		display: inline-block;
+		padding: 10px 15px;
+		margin: 5px 5px 15px 5px;
+		font-size: 100%;
+		font-weight: 300;
+		border: 2px solid @brown;
+		background-color: #fff;
+		border-radius: 5px;
+		i.fa {
+			padding-right: 7px;
+		}
+		strong {
+			font-weight: 600;
+		}
+		&:hover, &:focus {
+			border-color: darken(@brown, 20%);
+		}
+	}
+	table {
+		border-collapse: collapse;
+		font-weight: 300;
+		margin: auto;
+		width: 85%;
+		td {
+			padding: 5px;
+			border-top: 1px solid @brown;
+			border-bottom: 1px solid @brown;
+			line-height: 1.5;
+		}
+		.left {
+			text-align: left;
+			padding-right: 0;
+			float: none;
+			font-weight: 400;
+		}
+		.right {
+			text-align: right;
+			padding-left: 0;
+			float: none;
+		}
+		a:hover, a:focus {
+			color: lighten(@brown, 5%);
+			text-decoration: underline;
+		}
+	}
+	#map {
+		height: 100%;
+		min-height: 550px;
+	}
+	@media screen and (max-width: 959px) {
+		padding-top: 90px;
+		section.container {
+			top: 110px;
+		}
+	}
+	@media screen and (max-width: 680px) {
+		padding-top: 0;
+		padding-bottom: 0;
+		section.container {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			border: 0;
+			border-bottom: 2px solid @brown;
+			border-radius: 0;
+			max-height: none;
+			&.hide {
+				display: block;
+			}
+		}
+		#map {
+			min-height: 300px;
+			height: 300px;
+		}
+	}
+}
+
+
 // Team Page
 
 .team {
@@ -1213,56 +1324,23 @@ section.container {
 		max-width: 660px;
 		margin: auto;
 	}
-	.big-block {
+	.register-now {
 		max-width: 285px;
 		display: inline-block;
 		width: 80%;
-		margin: 0 0 18px 0;
-		padding: 15px 15px 12px 15px;
-		background-color: #eee;
-		border: 2px solid @brown;
-		border-radius: 10px;
-		font-weight: 300;
-		text-align: left;
-		color: #444;
-		a {
-			color: inherit;
-			&:hover, &:focus {
-				color: #888;
-				text-decoration: underline;
-			}
-		}
-		i.fa {
-			padding: 0 8px 0 2px;
-		}
-		h3 {
-			font-size: 110%;
-			font-weight: 600;
-		}
-		.note {
-			font-size: 90%;
-			margin-top: 10px;
-			text-align: center;
-			line-height: 1.5;
-		}
-		.bignote {
-			line-height: 1.5;
-			margin: 10px 5px 0 5px;
-			font-size: 100%;
-			&.fat {
-				font-weight: 400;
-			}
-		}
-	}
-	.register-now {
 		text-align: center;
 		font-weight: 600;
 		font-size: 120%;
 		line-height: 1.5;
 		background-color: #F9F9F9;
-		border-color: @brown;
+		border: 2px solid @brown;
+		border-radius: 10px;
 		padding: 10px 15px;
 		margin-bottom: 30px;
+		color: #444;
+		i.fa {
+			padding-right: 10px;
+		}
 		&:hover, &:focus {
 			border-color: darken(@brown, 20%);
 		}

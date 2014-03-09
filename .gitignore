@@ -3,6 +3,7 @@ node_modules/
 public/stylesheets/style.css
 public/javascripts/index.js
 public/javascripts/register.js
+public/javascripts/venue.js
 *.psd
 data
 registration-list.csv
