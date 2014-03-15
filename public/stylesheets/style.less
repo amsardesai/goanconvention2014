@@ -296,6 +296,7 @@ section.main {
 	background-position: center 0;
 	background-repeat: no-repeat;
 	background-image: url("../images/pittsburgh.jpg");
+	background-size: cover;
 	text-align: center;
 	color: #fff;
 	text-shadow: 0 0 5px #000;
@@ -385,7 +386,6 @@ section.main {
 	@media screen and (max-width: 680px) {
 		height: 550px;
 		min-height: 0;
-		background-size: 1150px 600px;
 		background-attachment: scroll;
 		.event {
 			margin: 0;
@@ -500,165 +500,125 @@ section.where {
 	}
 }
 
-section.blurred {
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	box-shadow: 0 0 5px #000;
-	border-bottom: 4px solid;
-	padding: 50px 0;
-	z-index: 1;
-	color: #000;
-	h1 {
-		padding-bottom: 0;
-	}
-	.bigbox {
-		width: 600px;
-		margin: auto;
-		border-radius: 10px;
-		border: 5px solid;
-	}
-	.description {
-		padding: 15px 30px;
-		font-size: 150%;
-		line-height: 1.5;
-		font-weight: 300;
-		width: 540px;
-		margin: auto;
-		strong {
-			font-weight: 600;
-		}
-	}
-	.worldmap {
-		width: 600px;
-		margin: auto;
-		display: block;
-	}
-	&.mobile {
-		background-image: none;
-		padding: 0;
-		.bigbox {
-			border: none;
-		}
-	}
-	@media screen and (max-width: 700px) {
-		padding: 30px 0;
-	}
-	@media screen and (max-width: 680px) {
-		padding: 0;
-		.bigbox {
-			border: none;
-		}
-	}
-	@media screen and (max-width: 600px) {
-		.bigbox {
-			width: auto;
-		}
-		.description {
-			width: 390px;
-			font-size: 120%;
-			padding: 10px 20px;
-		}
-		.worldmap {
-			width: 450px;
-		}
-	}
-	@media screen and (max-width: 450px) {
-		.description {
-			width: 340px;
-			padding: 10px;
-		}
-		.worldmap {
-			width: 300px;
-		}
-	}
-	@media screen and (max-width: 360px) {
-		.description {
-			width: 290px;
-		}
-	}
-
-	.setPicture(@color, @img, @bgcolor) {
-		background-color: @bgcolor;
-		background-image: url(@img);
-		border-color: darken(@color, 20%);
-		@media screen and (max-width: 680px) {
-			background-image: none;
-			background-color: @color;
-		}
-		&.mobile {
-			background-image: none;
-			background-color: @color;
-		}
-		.bigbox {
-			background-color: @color;
-			border-color: darken(@color, 20%);
-		}
-	}
-
-	&.goa {
-		.setPicture(#E9CEB9, "../images/goa_blurred.jpg", #FFF);
-	}
-}
 
 section.pic {
-	height: 90%;
-	min-height: 400px;
+	height: 60%;
 	background-position: bottom center;
 	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	padding: 50px 0;
+	.container {
+		border-color: inherit;
+	}
+	h1 {
+		font-size: 350%;
+		margin: 0 auto;
+		padding: 0;
+		line-height: 100px;
+		height: 100px;
+		&:before, &:after {
+			margin: 13px 30px;
+			height: 10px;
+		}
+	}
+	.bigbox {
+		width: 400px;
+		border-radius: 10px;
+		border: 5px solid;
+		border-color: inherit;
+		background-color: #fff;
+		position: absolute;
+		display: inline-block;
+		top: 30px;
+		img {
+			width: 100%;
+		}
+		&.left {
+			left: 30px;
+		}
+		&.right {
+			right: 30px;
+		}
+		&.center {
+			position: static;
+			width: 500px;
+			float: none;
+			.description {
+				font-size: 140%;
+
+			}
+		}
+		.description {
+			padding: 15px 30px;
+			font-size: 120%;
+			line-height: 1.5;
+			font-weight: 300;
+			margin: auto;
+			strong {
+				font-weight: 600;
+			}
+		}
+	}
 	.caption {
 		position: absolute;
 		bottom: 20px;
-		left: 50%;
-		width: 130px;
-		margin-left: -300px;
+		left: 20px;
+
+		height: 16px;
+		line-height: 16px;
 		display: inline-block;
-		padding: 5px;
+		padding: 5px 10px;
 		text-align: center;
 		background-color: #000;
 		color: #fff;
 		font-weight: 300;
-		font-size: 90%;
+		font-size: 100%;
 		opacity: 0.8;
-		border-radius: 5px;
+		border-radius: 8px;
+		text-decoration: none;
+		i.fa {
+			padding-right: 7px;
+		}
+		&:hover, &:focus {
+			background-color: #555;
+		}
 	}
 	&.mobile {
 		background-attachment: scroll;
+	}
+	&.autoheight {
+		height: auto;
+		min-height: 0;
+	}
+	&.parallax {
+		background-attachment: scroll;
+		background-position: center 400px;
+		background-size: auto;
 	}
 	@media screen and (max-width: 680px) {
 		height: 400px;
 		min-height: 0;
 		background-attachment: scroll;
-		.caption {
-			margin-left: -250px;
-		}
-	}
-	@media screen and (max-width: 600px) {
-		.caption {
-			margin-left: -200px;
-		}
 	}
 	@media screen and (max-width: 450px) {
 		height: 300px;
-		.caption {
-			margin-left: -150px;
-			bottom: 10px;
-		}
-	}
-
-	.setPicture(@img, @bgcolor, @width, @height) {
-		max-height: @height;
-		background-color: @bgcolor;
-		background-image: url(@img);
-		@media screen and (max-width: 680px) {
-			background-size: (@width / 2) (@height / 2);
-		}
-		@media screen and (max-width: 450px) {
-			background-size: (@width / 3) (@height / 3);
-		}
 	}
 
 	&.goa {
-		.setPicture("../images/goa.jpg", #fff, 2028px, 1352px);
+		background-image: url("../images/goa.jpg");
+	}
+
+	&.goa-blurred {
+		background-image: url("../images/goa_blurred.jpg");
+		.bigbox {
+			border-color: darken(#E9CEB9, 10%);
+			background-color: lighten(#E9CEB9, 5%)
+		}
+	}
+
+	&.goa-title {
+		background-image: url("../images/goa_title.jpg");
 	}
 }
 

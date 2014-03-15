@@ -21,10 +21,17 @@ $ ->
 		setTimeout fadeInEverything, 2500
 
 		mainMask = $(".index .main .mask").css("background-color": "black")
+		parallaxElements = $(".parallax")
 		(parallax = ->
-			mainMask.css(opacity: range(0, 1, $(window).scrollTop() / $(window).height()))
+			windowScrollTop = $(window).scrollTop()
+			windowHeight = $(window).height()
+			mainMask.css(opacity: windowScrollTop / windowHeight)
+			parallaxElements.each (i) ->
+				scrollMax = windowHeight + $(this).height()
+				scrollTop = windowScrollTop + windowHeight - $(this).offset().top
+				$(this).css("background-position": "center " + (scrollTop / scrollMax * 500 - 500) + "px")
 		)()
-		$(window).bind "scroll", parallax
+		$(window).bind "scroll resize", parallax
 
 	else
 		$(".goa-blurred, .goa").addClass("mobile");
