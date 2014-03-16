@@ -22,10 +22,19 @@ module.exports = (app, db, multiparty, csvtojson) ->
 			res.render "register", (families: data)
 
 	app.get "/random-fact", (req, res) ->
-		db.facts.findOne
-			random: $near: [Math.random(), 0]
-		, (err, data) ->
-			res.json (fact: data.fact)
+		prev = if req.query.prev? then req.query.prev else -1
+		(getItem = ->
+			#console.log "Doing getItem on #{prev}"
+			db.facts.findOne
+				random: $near: [Math.random(), 0]
+			, (err, data) ->
+				## FIX THIS
+				if data.id is prev
+					#console.log "Got #{prev}...doing method again"
+					getItem()
+					return
+				res.json (fact: data.fact, id: data.id)
+		)()
 
 
 	# Registration List POST
@@ -60,7 +69,8 @@ module.exports = (app, db, multiparty, csvtojson) ->
 				db.facts.insert
 					fact: fact
 					random: [Math.random(), 0]
-				results.push "-> #{fact}"
+					id: i
+				results.push "#{i} -> #{fact}"
 
 			converter.on "end_parsed", (json) -> output 200, true, results
 

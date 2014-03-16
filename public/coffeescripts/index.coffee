@@ -4,9 +4,10 @@ delay = 200
 
 $ ->
 
+	# Track Event
 	try _trackEvent "Main Page Events", "Click - Reload Facts"
 	catch
-	
+
 	if not Modernizr.touch
 		mainEvent = $(".index .main .event").css(opacity: 0)
 		header = $(".index header").css(opacity: 0)
@@ -26,43 +27,42 @@ $ ->
 		mainMask = $(".index .main .mask").css("background-color": "black")
 		parallaxElements = $(".parallax")
 		(parallax = ->
-			windowScrollTop = $(window).scrollTop()
+			windowWidth = $(window).width()
 			windowHeight = $(window).height()
+			windowScrollTop = $(window).scrollTop()
 			if windowScrollTop < windowHeight
 				mainMask.css(opacity: windowScrollTop / windowHeight)
 			parallaxElements.each (i) ->
 				scrollMax = windowHeight + $(this).outerHeight()
 				scrollTop = windowScrollTop + windowHeight - $(this).offset().top
 				if scrollTop > 0 and scrollTop < scrollMax
-					$(this).css("background-position": "center " + (scrollTop / scrollMax * 500 - 500) + "px")
+					factor = if windowWidth > 680 then 500 else 220
+					$(this).css("background-position": "center " + (scrollTop / scrollMax * factor - factor) + "px")
 		)()
 		$(window).bind "scroll resize", parallax
-
-	else
-		$(".goa-blurred, .goa").addClass("mobile");
 
 
 	reloadButton = $(".didyouknow a.reload")
 	factText = $(".didyouknow p")
 
-	(reloadFact = ->
-		text = $(this).html()
-		$(this).
+	(reloadFact = (curFact) ->
+		text = reloadButton.html()
+		reloadButton.
 			removeAttr("href").
 			removeClass("link").
 			html "Loading..."
-		$.getJSON "/random-fact", (data, textStatus, jqXHR) ->
+		$.getJSON "/random-fact", (prev: curFact), (data, textStatus, jqXHR) ->
 			fact = data.fact
-			factText.html fact
+			factText.data("fact", data.id).html fact
 			reloadButton.
 				attr("href", "javascript:void()").
 				addClass("link").
 				html "Tell me something else"
 
-	)()
+	)(-1)
 
 	reloadButton.click (e) ->
 		e.preventDefault()
 		try _gaq.push ["Main Page Events", "Click - Reload Facts"]
 		catch
-		reloadFact()
+		reloadFact factText.data("fact")

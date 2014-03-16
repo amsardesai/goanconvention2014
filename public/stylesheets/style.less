@@ -301,6 +301,9 @@ section.main {
 	color: #fff;
 	text-shadow: 0 0 5px #000;
 	display: table;
+	html.touch & {
+		background-attachment: scroll;
+	}
 	i.fa {
 		padding-right: 15px;
 	}
@@ -376,6 +379,9 @@ section.main {
 		left: 0;
 		right: 0;
 		bottom: 0;
+		html.touch & {
+			display: none;
+		}
 	}
 
 	@media screen and (max-width: 959px) {
@@ -513,7 +519,7 @@ section.pic {
 		margin: auto;
 	}
 	h1 {
-		font-size: 300%;
+		font-size: 270%;
 		margin: 0 auto;
 		padding: 0;
 		line-height: 100px;
@@ -613,7 +619,7 @@ section.pic {
 			opacity: 1;
 		}
 	}
-	&.mobile {
+	html.touch & {
 		background-attachment: scroll;
 	}
 	&.autoheight {
@@ -626,9 +632,12 @@ section.pic {
 	}
 	&.parallax {
 		background-attachment: scroll;
-		background-position: center 400px;
-		background-size: auto;
+		background-position: center center;
+		background-size: 2100px 600px;
 		padding: 50px 0;
+		html.touch & {
+			background-size: cover;
+		}
 	}
 
 
@@ -677,12 +686,15 @@ section.pic {
 			border-color: darken(#E9CEB9, 10%);
 			background-color: lighten(#E9CEB9, 5%)
 		}
+		html.touch & {
+			background-image: none;
+			background-color: #E9CEB9;
+		}
 	}
 
 	&.goa {
 		background-image: url("../images/goa.jpg");
 	}
-
 
 	@media screen and (max-width: 720px) {
 		.bigbox {
@@ -711,6 +723,7 @@ section.pic {
 		}
 		&.parallax {
 			padding: 0;
+			background-size: 1050px 300px;
 		}
 		&.autoheight {
 			padding: 20px 0;
@@ -725,7 +738,7 @@ section.pic {
 	@media screen and (max-width: 550px) {
 
 		.bigbox {
-			font-size: 70%;
+			font-size: 75%;
 			width: auto;
 			border-radius: 0;
 			&.attach-bottom {
@@ -780,6 +793,10 @@ section.pic {
 		height: 300px;
 		h1 {
 			font-size: 140%;
+			&:before, &:after {
+				width: 35px;
+				margin: 3px 10px;
+			}
 		}
 	}
 	@media screen and (max-width: 450px) {
@@ -800,6 +817,7 @@ section.didyouknow {
 	}
 	h1 {
 		padding-bottom: 11px;
+		padding-top: 26px;
 	}
 	p {
 		font-size: 140%;
