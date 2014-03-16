@@ -22,15 +22,11 @@ module.exports = (app, db, multiparty, csvtojson) ->
 			res.render "register", (families: data)
 
 	app.get "/random-fact", (req, res) ->
-		random = Math.random()
 		db.facts.findOne
-			random: $gte: random
+			random: $near: [Math.random(), 0]
 		, (err, data) ->
-			if data? then res.json (fact: data.fact) else
-				db.facts.findOne
-					random: $lte: random
-				, (err, data) ->
-					res.json (fact: data.fact)
+			res.json (fact: data.fact)
+
 
 	# Registration List POST
 
@@ -63,7 +59,7 @@ module.exports = (app, db, multiparty, csvtojson) ->
 				fact = raw[0]
 				db.facts.insert
 					fact: fact
-					random: Math.random()
+					random: [Math.random(), 0]
 				results.push "-> #{fact}"
 
 			converter.on "end_parsed", (json) -> output 200, true, results
