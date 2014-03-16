@@ -40,11 +40,40 @@ $ ->
 
 
 	reloadButton = $(".didyouknow a.reload")
-	fact = $(".didyouknow p")
+	factText = $(".didyouknow p")
+
+	(reloadFact = ->
+		text = $(this).html()
+		$(this).
+			removeAttr("href").
+			removeClass("link").
+			html "Loading..."
+		$.getJSON "/random-fact", (data, textStatus, jqXHR) ->
+			fact = data.fact
+			factText.html fact
+			reloadButton.
+				attr("href", "javascript:void()").
+				addClass("link").
+				html "Tell me something else"
+
+	)()
 
 	reloadButton.click (e) ->
 		e.preventDefault()
-		text = $(this).html()
-		$(this).removeAttr("href").removeClass("link").html "Loading..."
-		
+		reloadFact()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

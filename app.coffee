@@ -15,7 +15,7 @@ env = app.get 'env'
 
 # Database connections
 databaseUrl = process.env.MONGOHQ_URL
-collections = ['families']
+collections = ['families', 'facts']
 db = mongojs.connect databaseUrl, collections
 
 # all environments

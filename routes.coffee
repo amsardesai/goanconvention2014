@@ -21,6 +21,55 @@ module.exports = (app, db, multiparty, csvtojson) ->
 		db.families.find().sort (last: 1), (err, data) ->
 			res.render "register", (families: data)
 
+	app.get "/random-fact", (req, res) ->
+		random = Math.random()
+		db.facts.findOne
+			random: $gte: random
+		, (err, data) ->
+			if data? then res.json (fact: data.fact) else
+				db.facts.findOne
+					random: $lte: random
+				, (err, data) ->
+					res.json (fact: data.fact)
+
+	# Registration List POST
+
+	app.post "/facts", (req, res) ->
+
+		output = (code, success, message) ->
+			message = message or ""
+			res.status(code).json (success: success, message: message)
+
+		unless req.headers['content-type']? and req.headers['content-type'].substring(0, 19) is "multipart/form-data"
+			output 403, false, "You did not upload a file!"
+			return
+
+		form = new multiparty.Form()
+		form.parse req, (err, fields, files) ->
+
+			unless fields.pass? and fields.pass[0] is process.env.AUTH_PASS
+				output 401, false, "Invalid password! Password must be in 'pass' parameter."
+				return
+
+			unless files.file? 
+				output 403, false, "Invalid POST request! File must be in 'file' parameter."
+				return
+
+			converter = new csvtojson.core.Converter()
+			path = files.file[0].path
+			results = []
+
+			converter.on "record_parsed", (row, raw, i) ->
+				fact = raw[0]
+				db.facts.insert
+					fact: fact
+					random: Math.random()
+				results.push "-> #{fact}"
+
+			converter.on "end_parsed", (json) -> output 200, true, results
+
+			db.facts.remove {}, -> converter.from path
+
 
 	# Registration List POST
 
@@ -59,27 +108,23 @@ module.exports = (app, db, multiparty, csvtojson) ->
 
 				if guestFirst and guestLast
 					# is a guest
-					db.families.update (
+					db.families.update
 						first: guestFirst
 						last: guestLast
-					), (
-						$push: (
-							guests: (
+					,
+						$push:
+							guests:
 								$each: [first]
-							)
-						)
-					)
-					results.push "-> " + first + " has been added as a guest of " + guestFirst + " " + guestLast
+					results.push "-> #{first} has been added as a guest of #{guestFirst} #{guestLast}"
 				else
 					# is a leader
-					db.families.insert (
+					db.families.insert
 						first: first
 						last: last
 						city: city
 						state: state
 						guests: []
-					)
-					results.push first + " " + last + " lives in " + city + ", " + state
+					results.push "#{first} #{last} lives in #{city}, #{state}"
 
 			converter.on "end_parsed", (json) -> output 200, true, results
 
