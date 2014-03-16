@@ -502,24 +502,26 @@ section.where {
 
 
 section.pic {
-	height: 60%;
+	height: 85%;
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-align: center;
-	padding: 50px 0;
 	.container {
 		border-color: inherit;
+		max-width: 720px;
+		margin: auto;
 	}
 	h1 {
-		font-size: 350%;
+		font-size: 300%;
 		margin: 0 auto;
 		padding: 0;
 		line-height: 100px;
 		height: 100px;
+		font-weight: 300;
 		&:before, &:after {
-			margin: 13px 30px;
-			height: 10px;
+			margin: 10px 30px;
+			border-width: 2px 0 2px 0;
 		}
 	}
 	.bigbox {
@@ -540,6 +542,10 @@ section.pic {
 		&.right {
 			right: 30px;
 		}
+		&.bottom {
+			top: auto;
+			bottom: 30px;
+		}
 		&.center {
 			position: static;
 			width: 500px;
@@ -549,9 +555,29 @@ section.pic {
 
 			}
 		}
+
+		&.attach-top {
+			top: 0;
+			border-top: 0;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			.description {
+				padding-top: 7px;
+			}
+		}
+		&.attach-bottom {
+			top: auto;
+			bottom: -5px;
+			border-bottom: 0;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			.description {
+				padding-bottom: 7px;
+			}
+		}
 		.description {
 			padding: 15px 30px;
-			font-size: 120%;
+			font-size: 140%;
 			line-height: 1.5;
 			font-weight: 300;
 			margin: auto;
@@ -562,26 +588,30 @@ section.pic {
 	}
 	.caption {
 		position: absolute;
-		bottom: 20px;
-		left: 20px;
-
+		bottom: 10px;
+		width: 16px;
 		height: 16px;
 		line-height: 16px;
 		display: inline-block;
-		padding: 5px 10px;
+		padding: 5px;
 		text-align: center;
 		background-color: #000;
 		color: #fff;
 		font-weight: 300;
 		font-size: 100%;
 		opacity: 0.8;
-		border-radius: 8px;
+		border-radius: 16px;
 		text-decoration: none;
-		i.fa {
-			padding-right: 7px;
+		opacity: 0.5;
+		&.left {
+			left: 10px;
+		}
+		&.right {
+			right: 10px;
 		}
 		&:hover, &:focus {
 			background-color: #555;
+			opacity: 1;
 		}
 	}
 	&.mobile {
@@ -590,12 +620,71 @@ section.pic {
 	&.autoheight {
 		height: auto;
 		min-height: 0;
+		padding: 50px 0;
+	}
+	&.shorter {
+		height: 60%;
 	}
 	&.parallax {
 		background-attachment: scroll;
 		background-position: center 400px;
 		background-size: auto;
+		padding: 50px 0;
 	}
+
+
+	&.pittsburgh-title {
+		background-image: url("../images/pittsburgh_title.jpg");
+	}
+	&.pittsburgh-skyline {
+		background-image: url("../images/pittsburgh_skyline.jpg");
+		background-position: center center;
+		border-bottom: 5px solid darken(#EBCBB2, 10%);
+		.bigbox.right {
+			border-color: darken(#EBCBB2, 10%);
+			background-color: lighten(#EBCBB2, 5%);
+		}
+	}
+	
+	&.pittsburgh-bridges {
+		background-image: url("../images/pittsburgh_bridges.jpg");
+		.bigbox.right {
+			border-color: darken(#EBCBB2, 10%);
+			background-color: lighten(#EBCBB2, 5%);
+		}
+		border-bottom: 5px solid darken(#E4DCC2, 10%);
+		.bigbox.left {
+			border-color: darken(#E4DCC2, 10%);
+			background-color: lighten(#E4DCC2, 5%);
+		}
+	}
+	
+	&.pittsburgh-life {
+		background-image: url("../images/pittsburgh_life.jpg");
+		background-position: center center;
+		.bigbox.left {
+			border-color: darken(#E4DCC2, 10%);
+			background-color: lighten(#E4DCC2, 5%);
+		}
+	}
+	
+	&.goa-title {
+		background-image: url("../images/goa_title.jpg");
+	}
+	
+	&.goa-blurred {
+		background-image: url("../images/goa_blurred.jpg");
+		.bigbox {
+			border-color: darken(#E9CEB9, 10%);
+			background-color: lighten(#E9CEB9, 5%)
+		}
+	}
+
+	&.goa {
+		background-image: url("../images/goa.jpg");
+	}
+
+
 	@media screen and (max-width: 680px) {
 		height: 400px;
 		min-height: 0;
@@ -605,21 +694,35 @@ section.pic {
 		height: 300px;
 	}
 
-	&.goa {
-		background-image: url("../images/goa.jpg");
-	}
+}
 
-	&.goa-blurred {
-		background-image: url("../images/goa_blurred.jpg");
-		.bigbox {
-			border-color: darken(#E9CEB9, 10%);
-			background-color: lighten(#E9CEB9, 5%)
+section.didyouknow {
+	text-align: center;
+	background-image: url("../images/notebook.png");
+	background-size: 300px 154px;
+	line-height: 26px;
+	font-weight: 300;
+	padding-bottom: 26px;
+	i.fa {
+		padding-right: 10px;
+	}
+	h1 {
+		padding-bottom: 13px;
+	}
+	p {
+		font-size: 160%;
+		font-weight: 400;
+		padding: 13px 0 26px 0;
+	}
+	a.reload {
+		font-size: 120%;
+		display: block;
+		&.link:hover, &.link:focus {
+			text-decoration: underline;
+			color: #999;
 		}
 	}
 
-	&.goa-title {
-		background-image: url("../images/goa_title.jpg");
-	}
 }
 
 section.more {

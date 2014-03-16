@@ -25,13 +25,26 @@ $ ->
 		(parallax = ->
 			windowScrollTop = $(window).scrollTop()
 			windowHeight = $(window).height()
-			mainMask.css(opacity: windowScrollTop / windowHeight)
+			if windowScrollTop < windowHeight
+				mainMask.css(opacity: windowScrollTop / windowHeight)
 			parallaxElements.each (i) ->
-				scrollMax = windowHeight + $(this).height()
+				scrollMax = windowHeight + $(this).outerHeight()
 				scrollTop = windowScrollTop + windowHeight - $(this).offset().top
-				$(this).css("background-position": "center " + (scrollTop / scrollMax * 500 - 500) + "px")
+				if scrollTop > 0 and scrollTop < scrollMax
+					$(this).css("background-position": "center " + (scrollTop / scrollMax * 500 - 500) + "px")
 		)()
 		$(window).bind "scroll resize", parallax
 
 	else
 		$(".goa-blurred, .goa").addClass("mobile");
+
+
+	reloadButton = $(".didyouknow a.reload")
+	fact = $(".didyouknow p")
+
+	reloadButton.click (e) ->
+		e.preventDefault()
+		text = $(this).html()
+		$(this).removeAttr("href").removeClass("link").html "Loading..."
+		
+
