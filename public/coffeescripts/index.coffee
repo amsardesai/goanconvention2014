@@ -4,10 +4,6 @@ delay = 200
 
 $ ->
 
-	# Track Event
-	try _trackEvent "Main Page Events", "Click - Reload Facts"
-	catch
-
 	if not Modernizr.touch
 		mainEvent = $(".index .main .event").css(opacity: 0)
 		header = $(".index header").css(opacity: 0)
@@ -63,6 +59,6 @@ $ ->
 
 	reloadButton.click (e) ->
 		e.preventDefault()
-		try _gaq.push ["Main Page Events", "Click - Reload Facts"]
+		try _gaq.push ["_trackEvent", "Main Page Events", "Click - Reload Facts"]
 		catch
 		reloadFact factText.data("fact")
