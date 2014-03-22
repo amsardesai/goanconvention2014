@@ -816,8 +816,7 @@ section.didyouknow {
 		padding-right: 10px;
 	}
 	h1 {
-		padding-bottom: 11px;
-		padding-top: 26px;
+		padding-bottom: 12px;
 	}
 	p {
 		font-size: 140%;
@@ -829,27 +828,18 @@ section.didyouknow {
 	}
 	a.reload {
 		font-size: 120%;
-		display: block;
-		margin: 0 auto;
-		max-width: 480px;
-		&.link:hover, &.link:focus {
-			text-decoration: underline;
-			color: #999;
+		display: inline-block;
+		margin: 5px 0;
+		padding: 7px 14px;
+		border-radius: 5px;
+		&.link {
+			border: 2px solid #999;
+			background-color: #fff;
+			padding: 5px 12px;
 		}
-	}
-
-}
-
-section.more {
-	text-align: center;
-	background-image: url("../images/notebook.png");
-	background-size: 300px 154px;
-	font-size: 120%;
-	padding: 26px 9%;
-	line-height: 26px;
-	font-weight: 300;
-	i.fa {
-		padding-right: 10px;
+		&.link:hover, &.link:focus {
+			border-color: #444;
+		}
 	}
 
 }
@@ -1653,16 +1643,12 @@ section.container {
 	only screen and (-webkit-min-device-pixel-ratio: 2),
 	only screen and (min-device-pixel-ratio: 2) {
 
-	section.where {
+	section.where, section.didyouknow {
 		background-image: url("../images/notebook_@2X.png");
 	}
 
-	section.mapofgoans {
+	section.misc {
 		background-image: url("../images/triangular_@2X.png");
-	}
-
-	section.links {
-		background-image: url("../images/notebook_@2X.png");
 	}
 
 	.register {
