@@ -19,3 +19,9 @@ $ ->
 					$(this).animate (opacity: 1), delay * layingSpeed
 				offset: "95%"
 				triggerOnce: true
+
+	$(".mail-in").click ->
+		try _gaq.push ["_trackEvent", "Register Page Events", "Click - Mail-in Registration Form"] catch
+
+	$(".online").click ->
+		try _gaq.push ["_trackEvent", "Register Page Events", "Click - Online Registration Page"] catch

@@ -11,10 +11,10 @@ block content
 	section.container
 		h1 REGISTRATION
 		.instructions <strong>There are two ways to register.</strong> You can register and pay online, or you can fill a form and mail it with a cheque. Please select your option below. 
-		a.big-block.left.register-now(href="http://events.r20.constantcontact.com/register/event?llr=q6yb97pab&oeidk=a07e8z15x1377ca2e13",target="_blank") 
+		a.big-block.left.register-now.online(href="http://events.r20.constantcontact.com/register/event?llr=q6yb97pab&oeidk=a07e8z15x1377ca2e13",target="_blank") 
 			i.fa.fa-check-circle
 			| Online Registration Page
-		a.big-block.right.register-now(href="/files/registration.pdf",target="_blank") 
+		a.big-block.right.register-now.mail-in(href="/files/registration.pdf",target="_blank") 
 			i.fa.fa-envelope
 			| Mail-in Registration Form
 		hr
@@ -31,56 +31,3 @@ block content
 						each guest in family.guests
 							| , #{guest}
 		//googleon: all
-		//-hr
-		//-.big-block.left
-			h3 
-				i.fa.fa-info-circle
-				| Early Bird Registration Prices
-			table
-				tbody
-					tr
-						td.left Adult Regular 
-							span.notbold (age 23 and over)
-						td.right US $172
-					tr
-						td.left Adult Student 
-							span.notbold (age 18 to 22)
-						td.right US $142
-					tr
-						td.left Child 
-							span.notbold (age 6 to 17)
-						td.right US $112
-					tr
-						td.left Child 
-							span.notbold (age 5 and under)
-						td.right Free
-			.note Early bird prices available till March 31, 2014. Prices do not include hotel accommodation. 
-		//-.big-block.right
-			h3 
-				i.fa.fa-building-o
-				a(href="http://www.sheratonpittsburghairport.com/",target="_blank") Sheraton Pittsburgh Airport Hotel
-			table
-				tbody
-					tr
-						td.left Address
-						td.right <a href="https://www.google.ca/maps/place/data=!3m1!4b1!4m2!3m1!1s0x0:0x981ab971eddf30d4" target="_blank">1160 Thorn Run Rd<br />Coraopolis, PA 15108</a>
-					tr
-						td.left Room Type
-						td.right Single &amp; Double Beds
-					tr
-						td.left Pricing
-						td.right US $105
-					tr
-						td.left What's Included?
-						td.right Airport Shuttle<br />Self-Parking<br />Breakfast &amp; Wi-Fi
-					tr
-						td.left Phone Number
-						td.right <a href="tel:+14122622400">+1 (412) 262-2400</a>
-			.note Taxes extra. Discounted prices available till June 15, 2014. Call soon to reserve your room.
-		//-.big-block.left
-			h3 
-				i.fa.fa-clock-o
-				| Date of the Convention
-			.bignote.fat.left July 4 - 6, 2014
-			.bignote.right <a href="/schedule">View Schedule</a>
-		//-.clear
