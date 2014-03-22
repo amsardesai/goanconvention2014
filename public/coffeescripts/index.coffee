@@ -4,6 +4,8 @@ delay = 200
 
 $ ->
 
+	# Initial Animations & Parallax
+
 	if not Modernizr.touch
 		mainEvent = $(".index .main .event").css(opacity: 0)
 		header = $(".index header").css(opacity: 0)
@@ -38,6 +40,8 @@ $ ->
 		$(window).bind "scroll resize", parallax
 
 
+	# Reload Facts Button
+
 	reloadButton = $(".didyouknow a.reload")
 	factText = $(".didyouknow p")
 
@@ -57,8 +61,21 @@ $ ->
 
 	)(-1)
 
+
+	# Event Tracking
+
 	reloadButton.click (e) ->
 		e.preventDefault()
 		try _gaq.push ["_trackEvent", "Main Page Events", "Click - Reload Facts"]
 		catch
 		reloadFact factText.data("fact")
+
+	$("section.where").waypoint
+		handler: ->
+			try _gaq.push ["_trackEvent", "Main Page Events", "Scroll - Below Main Section"]
+			catch
+		offset: "99%"
+		triggerOnce: true
+
+
+
