@@ -66,15 +66,19 @@ $ ->
 
 	reloadButton.click (e) ->
 		e.preventDefault()
-		try _gaq.push ["_trackEvent", "Main Page Events", "Click - Reload Facts"]
-		catch
+		try _gaq.push ["_trackEvent", "Main Page Events", "Click - Reload Facts"] catch
 		reloadFact factText.data("fact")
 
 	$("section.where").waypoint
 		handler: ->
-			try _gaq.push ["_trackEvent", "Main Page Events", "Scroll - Below Main Section"]
-			catch
+			try _gaq.push ["_trackEvent", "Main Page Events", "Scroll - Below Main Section"] catch
 		offset: "99%"
+		triggerOnce: true
+
+	$("footer").waypoint
+		handler: ->
+			try _gaq.push ["_trackEvent", "Main Page Events", "Scroll - Bottom Of Page"] catch
+		offset: "100%"
 		triggerOnce: true
 
 
