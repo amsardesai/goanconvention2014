@@ -34,7 +34,7 @@ $ ->
 				scrollMax = windowHeight + $(this).outerHeight()
 				scrollTop = windowScrollTop + windowHeight - $(this).offset().top
 				if scrollTop > 0 and scrollTop < scrollMax
-					factor = if windowWidth > 680 then 500 else 220
+					factor = if windowWidth > 680 then 450 else 220
 					$(this).css("background-position": "center " + (scrollTop / scrollMax * factor - factor) + "px")
 		)()
 		$(window).bind "scroll resize", parallax
