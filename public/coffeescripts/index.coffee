@@ -58,7 +58,7 @@ $ ->
 				attr("href", "javascript:void()").
 				addClass("link").
 				html "Tell me something else"
-
+			$(window).resize()
 	)(-1)
 
 
