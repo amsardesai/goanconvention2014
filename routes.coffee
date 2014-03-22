@@ -23,14 +23,12 @@ module.exports = (app, db, multiparty, csvtojson) ->
 
 	app.get "/random-fact", (req, res) ->
 		prev = if req.query.prev? then req.query.prev else -1
+		prev = parseInt prev, 10
 		(getItem = ->
-			#console.log "Doing getItem on #{prev}"
 			db.facts.findOne
 				random: $near: [Math.random(), 0]
 			, (err, data) ->
-				## FIX THIS
 				if data.id is prev
-					#console.log "Got #{prev}...doing method again"
 					getItem()
 					return
 				res.json (fact: data.fact, id: data.id)
