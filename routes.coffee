@@ -18,8 +18,10 @@ module.exports = (app, db, multiparty, csvtojson) ->
 	app.get "/pastevents", (req, res) -> res.render "pastevents"
 
 	app.get "/register", (req, res) -> 
-		db.families.find().sort (last: 1), (err, data) ->
-			res.render "register", (families: data)
+		db.families.find().sort (last: 1), (err, families) ->
+			count = families.length
+			count += family.guests.length for family in families
+			res.render "register", (families: families, count: count)
 
 	app.get "/random-fact", (req, res) ->
 		prev = if req.query.prev? then req.query.prev else -1
