@@ -69,16 +69,19 @@ $ ->
 		try _gaq.push ["_trackEvent", "Main Page Events", "Click - Reload Facts"] catch
 		reloadFact factText.data("fact")
 
-	$("section.where").waypoint
+	$(".register-button").click ->
+		try _gaq.push ["_trackEvent", "Main Page Events", "Click - Register Now"] catch
+
+	$("body").waypoint
 		handler: ->
 			try _gaq.push ["_trackEvent", "Main Page Events", "Scroll - Below Main Section"] catch
-		offset: "99%"
+		offset: -1
 		triggerOnce: true
 
 	$("footer").waypoint
 		handler: ->
 			try _gaq.push ["_trackEvent", "Main Page Events", "Scroll - Bottom Of Page"] catch
-		offset: "100%"
+		offset: "bottom-in-view"
 		triggerOnce: true
 
 

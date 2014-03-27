@@ -25,3 +25,9 @@ $ ->
 
 	$(".online").click ->
 		try _gaq.push ["_trackEvent", "Register Page Events", "Click - Online Registration Page"] catch
+
+	$("section.container").waypoint
+		handler: ->
+			try _gaq.push ["_trackEvent", "Register Page Events", "Scroll - Bottom Of Page"] catch
+		offset: "bottom-in-view"
+		triggerOnce: true

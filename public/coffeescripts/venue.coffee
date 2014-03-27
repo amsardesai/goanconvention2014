@@ -53,5 +53,6 @@ $(window).load ->
 	google.maps.event.addListener panorama, 'visible_changed', ->
 		if panorama.getVisible()
 			$(".venue section.container").addClass "hide"
+			try _gaq.push ["_trackEvent", "Venue Page Events", "Misc - Launched Street View"] catch
 		else
 			$(".venue section.container").removeClass "hide"
