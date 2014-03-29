@@ -72,7 +72,13 @@ module.exports = (app, db, multiparty, csvtojson) ->
 					id: i
 				results.push "#{i} -> #{fact}"
 
-			converter.on "end_parsed", (json) -> output 200, true, results
+			converter.on "end_parsed", (json) -> 
+				numItems = json.csvRows.length
+				db.facts.find (err, data) ->
+					if numItems isnt data.length
+						output 500, false, "A problem occurred and not all facts have been uploaded successfully. Please reload this page."
+					else
+						output 200, true, results
 
 			db.facts.remove {}, -> converter.from path
 
@@ -132,7 +138,15 @@ module.exports = (app, db, multiparty, csvtojson) ->
 						guests: []
 					results.push "#{first} #{last} lives in #{city}, #{state}"
 
-			converter.on "end_parsed", (json) -> output 200, true, results
+			converter.on "end_parsed", (json) -> 
+				numItems = json.csvRows.length
+				db.families.find (err, data) ->
+					numDatabase = data.length
+					numDatabase += family.guests.length for family in data
+					if numDatabase isnt numItems
+						output 500, false, "A problem occurred and not all names have been uploaded successfully. Please reload this page."
+					else
+						output 200, true, results
 
 			db.families.remove {}, -> converter.from path
 
