@@ -76,6 +76,7 @@ module.exports = (app, db, multiparty, csvtojson) ->
 				numItems = json.csvRows.length
 				db.facts.find (err, data) ->
 					if numItems isnt data.length
+						console.log results
 						output 500, false, "A problem occurred and not all facts have been uploaded successfully. Please reload this page."
 					else
 						output 200, true, results
@@ -144,6 +145,7 @@ module.exports = (app, db, multiparty, csvtojson) ->
 					numDatabase = data.length
 					numDatabase += family.guests.length for family in data
 					if numDatabase isnt numItems
+						console.log results
 						output 500, false, "A problem occurred and not all names have been uploaded successfully. Please reload this page."
 					else
 						output 200, true, results
