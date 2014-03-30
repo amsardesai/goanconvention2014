@@ -110,45 +110,65 @@ module.exports = (app, db, multiparty, csvtojson) ->
 			converter = new csvtojson.core.Converter()
 			path = files.file[0].path
 			results = []
+			counter = 0
 
-			converter.on "record_parsed", (row, raw, i) ->
-				first = raw[0]
-				last = raw[1]
-				city = raw[2]
-				state = raw[3]
-				guestFirst = raw[4]
-				guestLast = raw[5]
+			converter.on "end_parsed", (json) ->
 
-				if guestFirst and guestLast
-					# is a guest
-					db.families.update
-						first: guestFirst
-						last: guestLast
-					,
-						$push:
-							guests:
-								$each: [first]
-					results.push "-> #{first} has been added as a guest of #{guestFirst} #{guestLast}"
-				else
-					# is a leader
-					db.families.insert
-						first: first
-						last: last
-						city: city
-						state: state
-						guests: []
-					results.push "#{first} #{last} lives in #{city}, #{state}"
+				complete = ->
+					db.families.find (err, data) ->
+						numDatabase = data.length
+						numDatabase += family.guests.length for family in data
+						if numDatabase is json.csvRows.length
+							output 200, true, results
+						else
+							console.log results
+							output 500, false, "A problem occurred and not all names have been uploaded successfully. Please reload this page."
 
-			converter.on "end_parsed", (json) -> 
-				numItems = json.csvRows.length
-				db.families.find (err, data) ->
-					numDatabase = data.length
-					numDatabase += family.guests.length for family in data
-					if numDatabase isnt numItems
-						console.log results
-						output 500, false, "A problem occurred and not all names have been uploaded successfully. Please reload this page."
+				for family, i in json.csvRows
+					first = family.first
+					last = family.last
+					city = family.city
+					state = family.state
+					guestFirst = family.guestFirst
+					guestLast = family.guestLast
+
+					if guestFirst and guestLast
+						# is a guest
+						db.families.update
+							first: guestFirst
+							last: guestLast
+						,
+							$push:
+								guests: first
+							$setOnInsert:
+								first: guestFirst
+								last: guestLast
+						,
+							upsert: true
+						, (err, docs) -> 
+							complete() if ++counter is json.csvRows.length
+						
+						results.push "-> #{first} has been added as a guest of #{guestFirst} #{guestLast}"
+
 					else
-						output 200, true, results
+						# is a leader
+						db.families.update
+							first: first
+							last: last
+						,
+							$set:
+								city: city
+								state: state
+							$setOnInsert:
+								first: first
+								last: last
+								guests: []
+						,
+							upsert: true
+						, (err, docs) -> 
+							complete() if ++counter is json.csvRows.length
+						
+						results.push "#{first} #{last} lives in #{city}, #{state}"
 
 			db.families.remove {}, -> converter.from path
 
