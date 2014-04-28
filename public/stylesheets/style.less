@@ -182,6 +182,7 @@ h1 {
 	padding: 26px 0;
 	font-weight: 300;
 	text-align: center;
+	line-height: 26px;
 	&:before, &:after {
 		content: "";
 		width: 100px;
@@ -274,7 +275,7 @@ hr {
 @media screen and (max-width: 500px) {
 	h1 {
 		font-size: 140%;
-		padding-top: 29px;
+		padding-top: 26px;
 		&:before, &:after {
 			width: 35px;
 			margin: 3px 10px;
@@ -392,6 +393,7 @@ section.main {
 	@media screen and (max-width: 680px) {
 		height: 550px;
 		min-height: 0;
+		background-image: url("../images/pittsburgh_small.jpg");
 		background-attachment: scroll;
 		.event {
 			margin: 0;
@@ -466,15 +468,15 @@ section.where {
 	background-image: url("../images/notebook.png");
 	background-size: 300px 154px;
 	h1 {
-		padding-bottom: 14px;
+		padding-bottom: 0;
 	}
 	a {
 		display: block;
 		font-weight: 300;
 		font-size: 130%;
 		line-height: 26px;
-		padding-top: 13px;
 		padding-bottom: 25px;
+		padding-top: 25px;
 		margin: auto;
 		max-width: 480px;
 		.hotel {
@@ -496,7 +498,7 @@ section.where {
 	@media screen and (max-width: 500px) {
 		a {
 			padding-bottom: 25px;
-			padding-top: 13px;
+			padding-top: 25px;
 			.hotel {
 				font-size: 100%;
 				padding-bottom: 0;
@@ -681,14 +683,14 @@ section.pic {
 	}
 	
 	&.goa-blurred {
-		background-image: url("../images/goa_blurred.jpg");
+		background-image: none;
+		background-color: #E9CEB9;
 		.bigbox {
 			border-color: darken(#E9CEB9, 10%);
 			background-color: lighten(#E9CEB9, 5%)
 		}
-		html.touch & {
-			background-image: none;
-			background-color: #E9CEB9;
+		html.no-touch & {
+			background-image: url("../images/goa_blurred.jpg");
 		}
 	}
 
@@ -729,9 +731,27 @@ section.pic {
 			padding: 20px 0;
 		}
 
-		&.goa-blurred {
+		&.pittsburgh-title {
+			background-image: url("../images/pittsburgh_title_small.jpg");
+		}
+		&.pittsburgh-skyline {
+			background-image: url("../images/pittsburgh_skyline_small.jpg");
+		}		
+		&.pittsburgh-bridges {
+			background-image: url("../images/pittsburgh_bridges_small.jpg");
+		}
+		&.pittsburgh-life {
+			background-image: url("../images/pittsburgh_life_small.jpg");
+		}
+		html.no-touch &.goa-blurred {
 			background-image: none;
 			background-color: #E9CEB9;
+		}
+		&.goa-title {
+			background-image: url("../images/goa_title_small.jpg");
+		}
+		&.goa {
+			background-image: url("../images/goa_small.jpg");
 		}
 
 	}
@@ -816,15 +836,16 @@ section.didyouknow {
 		padding-right: 10px;
 	}
 	h1 {
-		padding-bottom: 12px;
+		padding-bottom: 25px;
 	}
 	p {
 		font-size: 140%;
 		font-weight: 400;
-		padding: 13px 0 26px 0;
+		padding: 0 0 26px 0;
 		margin: 0 auto;
 		max-width: 560px;
 		width: 90%;
+		line-height: 26px;
 	}
 	a.reload {
 		font-size: 120%;
