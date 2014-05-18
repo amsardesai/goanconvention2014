@@ -358,16 +358,8 @@ section.main {
 		opacity: 0.85;
 		border-radius: 10px;
 		font-weight: 300;
-		.transition(0.3s, opacity);
-		&:hover {
-			opacity: 1;
-		}
-		&:focus {
-			opacity: 1;
-			color: #222;
-		}
 	}
-	.scrolldown {
+	.countdown {
 		clear: both;
 		font-size: 130%;
 		display: block;
@@ -419,8 +411,9 @@ section.main {
 			font-size: 170%;
 		}
 
-		.scrolldown {
-			display: none;
+		.countdown {
+			margin-top: 30px;
+			font-size: 140%;
 		}
 	}
 	@media screen and (max-width: 450px) {
@@ -455,8 +448,9 @@ section.main {
 			}
 		}
 
-		.scrolldown {
-			display: none;
+		.countdown {
+			margin-top: 20px;
+			font-size: 150%;
 		}
 
 	}
