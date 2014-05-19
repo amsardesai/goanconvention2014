@@ -343,9 +343,6 @@ section.main {
 		font-size: 170%;
 		line-height: 1.5;
 		font-weight: 400;
-		.newLine {
-			clear: both;
-		}
 	}
 	.register-button {
 		display: inline-block;
@@ -509,11 +506,6 @@ section.pic {
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-align: center;
-	.container {
-		border-color: inherit;
-		max-width: 720px;
-		margin: auto;
-	}
 	h1 {
 		font-size: 270%;
 		margin: 0 auto;
@@ -543,10 +535,6 @@ section.pic {
 		&.right {
 			right: 30px;
 		}
-		&.bottom {
-			top: auto;
-			bottom: 30px;
-		}
 		&.center {
 			position: static;
 			width: 500px;
@@ -556,7 +544,6 @@ section.pic {
 
 			}
 		}
-
 		&.attach-top {
 			top: 0;
 			border-top: 0;
@@ -826,9 +813,6 @@ section.didyouknow {
 	line-height: 26px;
 	font-weight: 300;
 	padding-bottom: 26px;
-	i.fa {
-		padding-right: 10px;
-	}
 	h1 {
 		padding-bottom: 25px;
 	}
@@ -1043,9 +1027,6 @@ section.container {
 			text-align: center;
 			border-bottom: 1px solid @schedule-table-border;
 		}
-		.before-event {
-			border-bottom: 0;
-		}
 		.schedule-time {
 			padding: 3px 0 7px 0;
 		}
@@ -1138,9 +1119,6 @@ section.container {
 		text-align: justify;
 		padding: 0 10px;
 		margin-bottom: 15px;
-		&.center {
-			text-align: center;
-		}
 	}
 	a.info {
 		display: block;
@@ -1174,11 +1152,6 @@ section.container {
 		font-weight: 300;
 		margin: auto;
 		width: 95%;
-		th {
-			padding: 5px;
-			border-bottom: 1px solid @brown;
-			font-weight: 400;
-		}
 		td {
 			padding: 5px;
 			border-top: 1px solid @brown;
@@ -1198,16 +1171,9 @@ section.container {
 			padding-left: 0;
 			float: none;
 		}
-		.tbu {
-			font-style: italic;
-		}
 		&.info {
 			text-align: left;
 			margin-bottom: 15px;
-		}
-		&.schedule {
-			border-collapse: separate;
-			margin-bottom: 20px;
 		}
 	}
 
@@ -1286,25 +1252,6 @@ section.container {
 			font-weight: 400;
 		}
 	}
-	.button {
-		display: inline-block;
-		padding: 10px 15px;
-		margin: 5px 5px 15px 5px;
-		font-size: 100%;
-		font-weight: 300;
-		border: 2px solid @brown;
-		background-color: #fff;
-		border-radius: 5px;
-		i.fa {
-			padding-right: 7px;
-		}
-		strong {
-			font-weight: 600;
-		}
-		&:hover, &:focus {
-			border-color: darken(@brown, 20%);
-		}
-	}
 	table {
 		border-collapse: collapse;
 		font-weight: 300;
@@ -1372,11 +1319,6 @@ section.container {
 	section.container {
 		max-width: 720px;
 		margin: auto;
-		em.info {
-			font-weight: 300;
-			display: block;
-			margin-bottom: 30px;
-		}
 	}
 	.contributors li {
 		width: 95%;
@@ -1480,56 +1422,9 @@ section.container {
 .register {
 	background-image: url("../images/squared_metal.png");
 	background-size: 132px 132px;
-	table {
-		border-collapse: collapse;
-		width: 100%;
-		margin: 15px auto 0 auto;
-		color: #000;
-		text-align: center;
-		td {
-			padding: 5px;
-			border-top: 1px solid @brown;
-			border-bottom: 1px solid @brown;
-			line-height: 1.5;
-		}
-		.left {
-			text-align: left;
-			font-weight: 400;
-			float: none;
-			span.notbold {
-				font-weight: 300;
-			}
-		}
-		.right {
-			text-align: right;
-			float: none;
-		}
-	}
 	section.container {
 		max-width: 660px;
 		margin: auto;
-	}
-	.register-now {
-		max-width: 285px;
-		display: inline-block;
-		width: 80%;
-		text-align: center;
-		font-weight: 600;
-		font-size: 120%;
-		line-height: 1.5;
-		background-color: #F9F9F9;
-		border: 2px solid @brown;
-		border-radius: 10px;
-		padding: 10px 15px;
-		margin-bottom: 30px;
-		color: #444;
-		i.fa {
-			padding-right: 10px;
-		}
-		&:hover, &:focus {
-			border-color: darken(@brown, 20%);
-		}
-
 	}
 	.instructions {
 		font-weight: 300;
@@ -1589,34 +1484,8 @@ section.container {
 				float: right;
 			}
 		}
-		.loading {
-			text-align: center;
-			font-weight: 300;
-		}
-	}
-	.clear {
-		clear: both;
-	}
-	@media screen and (max-width: 680px) {
-		.big-block {
-			width: 400px;
-			margin: 0 auto 20px auto;
-			max-width: 80%;
-			&.left, &.right {
-				float: none;
-			}
-		}
 	}
 	@media screen and (max-width: 500px) {
-		.big-block {
-			font-size: 90%;
-		}
-		.instructions {
-			font-size: 90%;
-		}
-		.register-now {
-			font-size: 110%;
-		}
 		.registrants {
 			font-size: 90%;
 			.family {
