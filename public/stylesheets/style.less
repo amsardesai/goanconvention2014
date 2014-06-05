@@ -1199,23 +1199,66 @@ section.container {
 
 .pastevents {
 	section.container {
-		max-width: 720px;
+		max-width: 640px;
 		margin: auto;
+		a:hover, a:focus {
+			color: #888;
+			text-decoration: underline;
+		}
+		i.fa {
+			padding-right: 5px;
+		}
 	}
-	.convention {
-		display: block;
-		width: 250px;
-		margin: 10px auto 30px auto;
-		padding: 15px 0;
-		border: 2px solid;
-		border-color: #aaa;
-		color: #555;
-		border-radius: 5px;
-		font-size: 120%;
+	p {
 		font-weight: 300;
-		background-color: #fff;
-		&:hover, &:focus {
-			border-color: #555;
+		width: 90%;
+		text-align: center;
+		margin: auto;
+		padding-bottom: 20px;
+		line-height: 1.5;
+		font-size: 110%;
+	}
+	.conventions li {
+		width: 95%;
+		padding: 15px 0;
+		margin: 0 auto;
+		position: relative;
+		border-top: 1px solid #ccc;
+		font-weight: 300;
+		line-height: 1.5;
+		.convention {
+			padding-left: 10px;
+			float: left;
+			text-align: left;
+			font-size: 110%;
+			font-weight: 600;
+			.location {
+				font-size: 90%;
+				font-weight: 300;
+			}
+		}
+		.link {
+			display: inline-block;
+			float: right;
+			margin-right: 10px;
+		}
+		.separator {
+			display: inline-block;
+			float: right;
+			border-right: 1px solid #aaa;
+			margin-right: 10px;
+			height: 20px;
+		}
+		.clear {
+			clear: both;
+		}
+		&:last-child {
+			border-bottom: 1px solid #ccc;
+		}
+	}
+	@media screen and (max-width: 400px) {
+		.conventions li .convention .location {
+			display: block;
 		}
 	}
 }
