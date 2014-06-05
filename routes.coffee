@@ -12,7 +12,6 @@ module.exports = (app, db, multiparty, csvtojson) ->
 
 	app.get "/", (req, res) -> 
 		daysleft = Math.ceil (1404460800000 - Date.now()) / 86400000
-		console.log daysleft
 		res.render "index", (daysleft: daysleft)
 	
 	app.get "/schedule", (req, res) -> res.render "schedule"
