@@ -4,26 +4,23 @@ block head
 	-var title = "Schedule - Goan Convention 2014";
 	-var bodyClass = "schedule"
 	-var description = "The 2014 Goan Convention will have many exciting programs, from talent shows and movie nights for the teenagers, to Goan entertainment programs for the adults. There will also be a guided tour of Pittsburgh."
-	//-link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-	//-script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-	//-script(type='text/javascript', src='/javascripts/bootstrap.min.js')
-	//-script(type='text/javascript', src='/javascripts/schedule.js')
+	link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+	script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+	script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+	script(type='text/javascript', src='/javascripts/schedule.js')
 
 block content
 	section.container
 		h1 SCHEDULE
 		em <strong>NOTE:</strong> The following is a tentative schedule only &mdash; it is subject to change.
-		a.print(href="/files/schedule.pdf",target="_blank") 
-			i.fa.fa-file-text-o
-			| View Schedule
-		//-ul
+		ul
 			li.item.youth For Youth
 			li.item.adult For Adults
 			li.item.major For Everyone
-		//-a.print(href="javascript:if(window.print)window.print()") 
+		a.print(href="javascript:if(window.print)window.print()") 
 			i.fa.fa-print
 			| Print this page
-		//-table.schedule-table.mobile
+		table.schedule-table.mobile
 			thead
 				tr
 					th(colspan="3") Friday, Jul 4
@@ -53,7 +50,7 @@ block content
 					td.schedule-time 1:00 AM
 					td(colspan="2")
 
-		//-table.schedule-table.mobile
+		table.schedule-table.mobile
 			thead
 				tr
 					th(colspan="3") Saturday, Jul 5
@@ -106,7 +103,7 @@ block content
 					td(colspan="2")
 
 
-		//-table.schedule-table.mobile
+		table.schedule-table.mobile
 			thead
 				tr
 					th(colspan="3") Sunday, Jul 6
@@ -134,7 +131,7 @@ block content
 					td(colspan="2")
 
 
-		//-table.schedule-table
+		table.schedule-table
 			thead
 				tr
 					th
@@ -143,11 +140,6 @@ block content
 					th(colspan="2") Sunday, Jul 6
 			tbody
 				tr
-					td.schedule-time 6:30 AM
-					td(colspan="2")
-					td(colspan="2")
-					td(colspan="2")
-				tr
 					td.schedule-time 7:00 AM
 					td(colspan="2")
 					td(colspan="2")
@@ -155,40 +147,41 @@ block content
 				tr
 					td.schedule-time 7:30 AM
 					td(colspan="2")
-					td.schedule-event(colspan="2",rowspan="2",title="Yoga and Zumba",data-content="<div><strong>Location:</strong> Commonwealth Room</div>") Yoga and Zumba
+					td.schedule-event(colspan="2",title="Yoga",data-content="<div><strong>Location:</strong> Commonwealth Room</div>") Yoga
 					td(colspan="2")
 				tr
 					td.schedule-time 8:00 AM
 					td(colspan="2")
+					td.schedule-event(colspan="2",title="Zumba",data-content="<div><strong>Location:</strong> Commonwealth Room</div>") Zumba
 					td(colspan="2")
 				tr
 					td.schedule-time 8:30 AM
 					td(colspan="2")
 					td.schedule-event(colspan="2",rowspan="3",title="Breakfast",data-content="<div><strong>Location:</strong> Ballroom</div>") Breakfast
-					td.schedule-event(colspan="2",rowspan="3",title="Breakfast",data-content="<div><strong>Location:</strong> Ballroom</div>") Breakfast
+					td.schedule-event(colspan="2",rowspan="2",title="Breakfast",data-content="<div><strong>Location:</strong> Ballroom</div>") Breakfast
 				tr
 					td.schedule-time 9:00 AM
 					td(colspan="2")
 				tr
 					td.schedule-time 9:30 AM
 					td(colspan="2")
+					td.schedule-event.youth(rowspan="3",title="Rest at Commonwealth Room",data-content="<div><strong>Location:</strong> Commonwealth Room</div>") Rest
+					td.schedule-event.adult(rowspan="3",title="Shops, Vendors, and Lectures",data-content="<div><strong>Location:</strong> Ballroom</div>") Shops, Vendors, and Lectures
 				tr
 					td.schedule-time 10:00 AM
 					td(colspan="2")
-					td.schedule-event.major(colspan="2",rowspan="10",title="Picnic",data-content="<div><strong>Location:</strong> A park somewhere in Pittsburgh</div><div><strong>Attire:</strong> Casual</div>") Picnic
-					td(colspan="2")
+					td.schedule-event.major(colspan="2",rowspan="10",title="Picnic",data-content="<div><strong>Location:</strong> A park somewhere in Pittsburgh</div><div><strong>Attire:</strong> Casual</div><em>Buses will leave the hotel at exactly 10:00 AM and will return at 3:00 PM. </em>") Picnic
 				tr
 					td.schedule-time 10:30 AM
-					td(colspan="2")
 					td(colspan="2")
 				tr
 					td.schedule-time 11:00 AM
 					td(colspan="2")
-					td.schedule-event(colspan="2",title="Picnic",data-content="<div><strong>Location:</strong> A park somewhere in Pittsburgh</div><div><strong>Attire:</strong> Casual</div>") Treasurer's Report
+					td.schedule-event(colspan="2",title="Treasurer's Report",data-content="<div><strong>Location:</strong> Ballroom</div>") Treasurer's Report
 				tr
 					td.schedule-time 11:30 AM
 					td(colspan="2")
-					td(colspan="2")
+					td.schedule-event.major(colspan="2",title="Next Goan Convention Discussion",data-content="<div><strong>Location:</strong> Ballroom</div>") Next Goan Convention Discussion
 				tr
 					td.schedule-time 12:00 PM
 					td(colspan="2")
@@ -211,12 +204,13 @@ block content
 					td(colspan="2")
 				tr
 					td.schedule-time 2:30 PM
-					td.schedule-event(colspan="2",rowspan="5") Registration
-						.small Tea and snacks will be provided
+					td.schedule-event(colspan="2",rowspan="5",title="Registration",data-content="<em>Tea and snacks will be provided starting at 3:00 PM. </em>") Registration
 					td(colspan="2")
 				tr
 					td.schedule-time 3:00 PM
-					td.schedule-event.adult(colspan="2",rowspan="3",title="Siesta Time",data-content="<div><strong>Location:</strong> Ballroom</div>") Siesta Time
+					td.schedule-event.youth(rowspan="3",title="Rest at Commonwealth Room",data-content="<div><strong>Location:</strong> Commonwealth Room</div><em>Swimming pool for small children will be available. Parents must supervise their children in the swimming pool.</em>") Rest
+						.small Swimming pool for children
+					td.schedule-event.adult(rowspan="3",title="Siesta Time",data-content="<div><strong>Location:</strong> Ballroom</div><em>This event is optional.</em>") Siesta Time
 					td(colspan="2")
 				tr
 					td.schedule-time 3:30 PM
@@ -226,42 +220,45 @@ block content
 					td(colspan="2")
 				tr
 					td.schedule-time 4:30 PM
-					td.schedule-event(colspan="2",rowspan="2") Tea, Coffee, and Snacks
+					td.schedule-event(colspan="2",rowspan="2",title="Tea, Coffee, and Snacks",data-content="<div><strong>Location:</strong> Ballroom</div>") Tea, Coffee, and Snacks
 					td(colspan="2")
 				tr
 					td.schedule-time 5:00 PM
-					td.schedule-event(colspan="2",rowspan="2") Welcome Speech
+					td.schedule-event(colspan="2",rowspan="2",title="Welcome Speech",data-content="<div><strong>Location:</strong> Ballroom</div>") Welcome Speech
 					td(colspan="2")
 				tr
 					td.schedule-time 5:30 PM
-					td.schedule-event.major(colspan="2",rowspan="4",title="Pittsburgh's Got Talent",data-content="<div><strong>Location:</strong> Ballroom</div><div><strong>Attire:</strong> Comfortable</div><em>Cocktails will be served from 6:30 to 7:30.</em>") Pittsburgh's Got Talent
+					td.schedule-event.major(colspan="2",rowspan="5",title="Pittsburgh's Got Talent",data-content="<div><strong>Location:</strong> Ballroom</div><div><strong>Attire:</strong> Comfortable</div><em>Live music and dance program! Cocktails will be served from 7:00 PM to 8:00 PM.</em>") Pittsburgh's Got Talent
+						.small Live music
+						.small Dance program
 					td(colspan="2")
 				tr
 					td.schedule-time 6:00 PM
 					td.schedule-event.youth(rowspan="6",title="Latitude360",data-content="<div><strong>Location:</strong> 200 Quinn Dr, Pittsburgh, PA</div><div><strong>Attire:</strong> Casual</div>") Latitude360
 						.small Bowling trip
-					td.schedule-event(rowspan="2") Cocktail
+					td.schedule-event.adult(rowspan="6",title="Goa's Got Talent",data-content="<div><strong>Location:</strong> Ballroom</div><em>Talent show for both children and adults! Cocktails will be served from 6:30 PM to 7:30 PM.</em><em>Children will be entertained at a dance workshop provided by Ruby Jain from 8:00 PM to 9:00 PM.</em>") Goa's Got Talent
+						.small Talent show
+						.small Kid's dance workshop
 					td(colspan="2")
 				tr
 					td.schedule-time 6:30 PM
 					td(colspan="2")
 				tr
 					td.schedule-time 7:00 PM
-					td.schedule-event.adult(rowspan="4",title="Goa's Got Talent",data-content="<div><strong>Location:</strong> Ballroom</div>") Goa's Got Talent
 					td(colspan="2")
 				tr
 					td.schedule-time 7:30 PM
-					td.schedule-event(colspan="2",rowspan="3") Dinner
 					td(colspan="2")
 				tr
 					td.schedule-time 8:00 PM
+					td.schedule-event(colspan="2",rowspan="2",title="Dinner",data-content="<div><strong>Location:</strong> Ballroom</div><div><strong>Attire:</strong> Comfortable</div>") Dinner
 					td(colspan="2")
 				tr
 					td.schedule-time 8:30 PM
 					td(colspan="2")
 				tr
 					td.schedule-time 9:00 PM
-					td.schedule-event(colspan="2",rowspan="2") Dinner
+					td.schedule-event(colspan="2",rowspan="2",title="Dinner",data-content="<div><strong>Location:</strong> Ballroom</div>") Dinner
 					td(colspan="2")
 					td(colspan="2")
 				tr
@@ -270,7 +267,7 @@ block content
 					td(colspan="2")
 				tr
 					td.schedule-time 10:00 PM
-					td.schedule-event.major(colspan="2",rowspan="6",title="DJ Dancing",data-content="<div><strong>Location:</strong> Ballroom</div><div><strong>Attire:</strong> Semi-formal</div>") DJ Dancing
+					td.schedule-event.major(colspan="2",rowspan="6",title="DJ Dancing and Karaoke",data-content="<div><strong>Location:</strong> Ballroom</div><div><strong>Attire:</strong> Semi-formal</div>") DJ Dancing and Karaoke
 					td(colspan="2")
 				tr
 					td.schedule-time 10:30 PM

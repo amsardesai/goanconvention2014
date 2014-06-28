@@ -957,7 +957,9 @@ section.container {
 // Schedule Page
 
 .schedule {
+	@event-background-darken-percentage-hover: 4%;
 	@event-border-darken-percentage: 30%;
+	@event-border-darken-percentage-hover: 33%;
 
 	max-width: 1080px;
 	min-width: 70%;
@@ -1008,11 +1010,28 @@ section.container {
 			border-color: darken(@schedule-event-everyone, @event-border-darken-percentage);
 		}
 	}
+	.popover-title {
+		font-weight: 400;
+		text-align: center;
+	}
+	.popover-content {
+		font-weight: 300;
+		font-size: 90%;
+		line-height: 1.5;
+		strong {
+			font-weight: 600;
+		}
+		em {
+			display: block;
+			padding-top: 7px;
+			font-style: italic;
+		}
+	}
 	.schedule-table {
 		width: 100%;
 		margin: 20px auto 0 auto;
 		border-collapse: separate;
-		border-spacing: 15px 5px;
+		border-spacing: 10px 4px;
 		border-left: 1px solid @schedule-table-border;
 		border-right: 1px solid @schedule-table-border;
 		table-layout: fixed;
@@ -1028,7 +1047,7 @@ section.container {
 			border-bottom: 1px solid @schedule-table-border;
 		}
 		.schedule-time {
-			padding: 3px 0 7px 0;
+			padding: 6px 0 9px 0;
 		}
 		.schedule-event {
 			vertical-align: middle;
@@ -1052,6 +1071,21 @@ section.container {
 				border-color: darken(@schedule-event-everyone, @event-border-darken-percentage);
 				font-weight: 400;
 			}
+			&.forever {
+				border-bottom: 0;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+				position: relative;
+				&:after {
+					content: "\f103";
+					font-family: FontAwesome;
+					font-style: normal;
+					font-weight: normal;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+				}
+			}
 			.small {
 				font-size: 90%;
 				font-weight: 300;
@@ -1071,7 +1105,7 @@ section.container {
 				padding: 0 5px;
 			}
 			.schedule-event {
-				font-size: 80%;
+				font-size: 90%;
 			}
 		}
 	}
