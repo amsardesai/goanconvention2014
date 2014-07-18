@@ -10,10 +10,7 @@ module.exports = (app, db, multiparty, csvtojson) ->
 
 	# GET requests for every page on site
 
-	app.get "/", (req, res) -> 
-		daysleft = Math.ceil (1404460800000 - Date.now()) / 86400000
-		res.render "index", (daysleft: daysleft)
-	
+	app.get "/", (req, res) -> res.render "index"
 	app.get "/schedule", (req, res) -> res.render "schedule"
 	app.get "/sponsors", (req, res) -> res.render "sponsors"
 	app.get "/venue", (req, res) -> res.render "venue"

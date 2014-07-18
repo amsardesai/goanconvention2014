@@ -18,13 +18,9 @@ block content
 				.date July 4 - 6, 2014
 				.location Pittsburgh, PA
 			h4.event-info Bringing Goans together from all over North America to celebrate culture and heritage
-			a.register-button 
-				i.fa.fa-times-circle
-				| Registration Closed
-			if daysleft > 0
-				.countdown
-					i.fa.fa-clock-o.fa-lg
-					| #{daysleft} days left!
+			a.register-button(href="/files/2014souvenir.pdf",target="_blank")
+				i.fa.fa-file-text
+				| View 2014 Souvenir
 		.mask
 	section.outer.where
 		h1 VENUE
