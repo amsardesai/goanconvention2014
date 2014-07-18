@@ -355,6 +355,14 @@ section.main {
 		opacity: 0.85;
 		border-radius: 10px;
 		font-weight: 300;
+		.transition(0.3s, opacity);
+		&:hover {
+			opacity: 1;
+		}
+		&:focus {
+			opacity: 1;
+			color: #222;
+		}
 	}
 	.countdown {
 		clear: both;
